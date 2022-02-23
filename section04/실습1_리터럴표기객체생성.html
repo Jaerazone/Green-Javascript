@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //////리터럴 표기를 이용한 객체 생성 실습 1
+        let person = {
+
+            //속성
+            name : "홍길동",
+            address : "부산",
+
+            //메서드
+            intro : function () {
+                document.write
+                (this.name +"입니다. " +
+                 this.address+"에 거주중입니다<br>");
+            }
+        };
+        //콘솔창에 부를때
+        // person.name
+        // person.address
+        // person.intro()
+
+        //////리터럴 표기를 이용한 객체 생성 실습 2
+        let myCookie = {
+
+            //속성
+            shape : "원",
+            flavor : "초코",
+
+            //메서드
+            intro : function () {
+                return `${this.shape}모양의 ${this.flavor}맛입니다`;
+                //console.log(this.shape+"모양의 "+this.flavor+"맛입니다");
+            },
+            change : function(shape) { // shape 매개변수를 통해서 값을 받아옴
+                this.shape = shape; //값을 속성에 할당할수 있다.
+            }
+        }; // this를 써야지만 이 안의 속성을 가져올수있다.
+
+        // 콘솔창에 부를때
+        // myCookie.change("네모");
+        // 반드시 문자열로 불러줘야함 " "
+        // myCookie.intro()
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //함수표현식으로 만들어서
+        // 이름없는 함수이다
+        //그래서 매개변수도 없고
+        // let hi를 함수 밑에 다른 값으로 지정하면
+        // 함수자체가 없어지기때문에 이름없는 함수라고부른다
+        //그래서 매개변수가 없는 함수!
+
+        let hi = function() {
+            document.w1rite("안녕");
+        }; // 변수안에 할당이므로 ; 를 붙인다.
+
+        //화살표함수
+        //let hi = () => document.write("안녕");
+
+        let hiName = function(name) { //함수이름x, 매개변수1개
+            document.write("<p>"+name+"</P>");
+        }; // 변수안의 할당이므로 ;을 붙인다
+
+
+        hi();// 호출방법은 동일
+        //hiName = "다른값"; // 다른값을 할당하면 위의 함수가 없어진다.
+        //TypeError : 바로위에서 변수값을 가지고 있기 때문에
+        // 아래 hiName("홍길동"); < 여기서 함수를 호출하면안된다
+        // 변수인데 함수호출해서 에러남
+        hiName("홍길동");
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let Puppy = {
+            //속성
+            //속성값은 문자열, 숫자형 뿐만 아니라 객체(object)도 들어올수 있다
+            name : "초코",
+            //메서드
+            //표현식 함수(익명함수)로 들어오기에 화살표 함수로도 올수있다
+            eat : function() {
+                document.write("<p>밥을 먹습니다</p>");
+            },
+            namePrint : function() {
+                // this를 이용해서 속성값 또는 메소드를 참조할수 있다
+                console.log(this.name+"입니다");
+            }
+        }; // 객체 생성완료
+
+        //객체에 접근하기위해서는 .을 붙여준다
+        // 콘솔창을 이용해서 실행해보자
+
+
+        //빈 객체(오브젝트)를 이용하여 
+        let tree = new Object(); // 빈객체를 생성
+        tree.height = 200; //속성값 추가
+        tree.type = "은행나무"; //속성값 추가
+        tree.fall = function() { // 메서드 추가
+            return "잎사귀가 노랗게 되었습니다";
+        };
+        // 콘솔창
+        // tree.height
+        // tree.type
+        // tree.fall()
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        // 비가오면 우산을 들고간다
+        let isRain = false;
+
+        if (isRain) {
+            document.write("우산을 들고간다<br>");
+        }
+
+        // 점수가 60이상이면 합격
+        let score = 70
+
+        if (score>=60) {
+            document.write("합격입니다<br>");
+        }
+
+        ///////////////////
+        //////실습내용//////
+        ///////////////////
+
+        //bool 조건문
+        let check = true;
+        if (check) {
+            document.write("확인하였습니다<br>");
+        }
+
+        //bool 자료형
+        let word = '의자';
+        if(word == "의자") {
+            document.write("맞습니다<br>");
+        }
+
+        ///////////////////
+        //////실습내용  1//////
+        ///////////////////
+
+        //if else 조건문
+        // 키가 140이상이면 놀이가구 탈수있다
+        // 그렇지 않으면 탈수 없다
+        let height = 130;
+        if (height >=140) {
+            document.write("놀이기구탈수있어용<br>");
+        }
+        else {
+                document.write("놀이가구못타용<br>");
+        }
+        // 스위치를 켜면 불이 켜지고, 아니면 꺼진다
+        let button = true;
+        if (button) {
+            document.write("불이 켜졌다<br>");
+        }
+        else {
+            document.write("불이 꺼졌다<br>");
+        }
+
+        ///////////////////
+        //////실습내용  2//////
+        ///////////////////
+        //if else 조건문
+        // 변수 money 를 만들고 값을 할당한후,
+        //값이 1500보다 크다면
+        // 참이면 버스를 타고갑니다, 거짓이면 걸어갑니다 출력
+
+        /*
+        let money = 1600;
+        if (money > 1500) {
+            document.write("버스를 타고갑니다<br>");
+        }
+        else {
+            document.write("걸어갑니다<br>");
+        }
+
+        let isCard = true;
+        if (isCard = true) {
+            document.write("버스를 타고갑니다<br>");
+        }
+        else {
+            document.write("걸어갑니다<br>");
+        }
+        */
+        //연산자 또는 ||
+        let money = 1000;
+        let isCard = true;
+        if ((money > 1500) || isCard) {
+            document.write("버스를 타고갑니다<br>");
+        }
+        else {
+            document.write("걸어갑니다<br>");
+        }
+    </script>
+</body>
+</html>

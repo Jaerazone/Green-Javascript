@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function f() { // 감싸고 있는 함수 - 상위 함수
+            let value = 123;
+            // 함수 안에서 생성된 함수
+            function g () {
+                alert(value); // 상위함수의 값을 들고올수 있고
+            }
+            g(); // 함수호출
+        }
+        f();
+
+        //클로저함수
+        let globalCount = 0;
+        function CountG() {
+            globalCount++; // globalCount += 1;
+        }        //console로 확인하기
+        // CountG() 실행횟수만큼 , globalCount실행하면 실행숫자나옴
+        
+        //클로저함수
+        function CountL() {
+            let localCount = 0; //이 함수를 전역 변수처럼 사용
+            return function () { //return을 통해 익명함수를 되돌려줌
+                return localCount+=1;
+            };
+        }
+
+        //클로저함수 사용하기
+        let countTest = CountL();
+
+        alert(countTest());
+        alert(countTest());
+        alert(countTest());
+
+        //람다형식
+        let lamda = ( function() {return "람다형식입니다"; } ) ();
+
+        //책 134page 의 글로저 함수
+        let count = (function () {
+            let localCount = 0; //이 함수를 전역 변수처럼 사용
+            function plus() { //return을 통해 익명함수를 되돌려줌
+                return localCount ++;
+            };
+        }) ();
+
+    </script>
+</body>
+</html>

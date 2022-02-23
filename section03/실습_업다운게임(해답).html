@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+    </script>
+
+</head>
+<body>
+    
+    <h1 id = "num"> </h1>
+
+    <script>
+        //while 문과 break문을 사용하여 프롬프트로 값을 받고 
+        //정답이라면 반복문 나오기
+
+            //Math.random() //0초과 1미만의 소수값
+            let random = Math.random()*100; // 소수점이라 0~99까지 값이 나오게 100을 곱함(99.xxx 이런식으로 나옴)
+            random =parseInt(random); // 소수점 제외하고, 정수만 가져옴
+
+            let user = document.getElementById(num);
+
+            user = prompt("값을 입력하시오");
+
+            while (random != user ) {
+                // 프롬포트 설명을 다르게 넣어주기 위해 
+                // if 와 else if 문을 넣어준다.
+                if (random > user) {
+                    user = prompt("정답은 더 큰 값입니다");
+                    //프롬포트 대신에 alert 으로 큰지 작은지 알려줘도된다.
+                }
+                else if (random < user) {
+                    user = prompt("정답은 더 작은 값입니다");
+                }
+            }
+            user += "정답입니다";
+            document.getElementById("num").innerHTML= user;
+    </script>
+    
+    <!--
+    <input type="text" id="num"> 
+    
+    <input type ="button" onclick="numCheck()" value="확인">
+
+    <script>
+        
+        function numCheck() {
+            //Math.random() //0초과 1미만의 소수값
+            let random = Math.random()*100; // 소수점이라 0~99까지 값이 나오게 100을 곱함(99.xxx 이런식으로 나옴)
+            random =parseInt(random); // 소수점 제외하고, 정수만 가져옴
+
+            let person = document.getElementById(num);
+            
+            if (random > person) {
+                document.write("random값이 더 큰 값입니다");
+            }
+            else if (random < person) {
+                document.write("random값이 더 작은 값입니다");
+            }
+            else if (random == person) {
+                document.write("random값입니다");
+            }
+        }
+        재라 답안
+        --> 
+
+       
+
+    </script>
+</body>
+</html>

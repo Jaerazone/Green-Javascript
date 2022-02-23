@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    
+    <script>
+        //매개변수와 리턴값이 있는 함수의 형태
+        // 선언적(명시적) 함수 입니다.
+        function functionName(name) { // 매개변수 name, 값을 받아올 수 있다
+            document.write(name); // html 에 출력하는 코드
+            return name+"입니다"; // name입니다를 반환
+            //return을 넣으면 콘솔창에 functionName("홍길동"); 치면 -> 결과가 '홍길동입니다' 로 나옴
+            //★모든 함수는 리턴값을 갖는다. 리턴할당되지않은 경우 undefined
+        }// 함수 선언이 끝남
+        //선언했다면 이제 호출할 차례
+
+        //함수호출
+        functionName("홍길동");
+    </script>
+</body>
+</html>

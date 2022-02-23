@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // let numArray = [30,60,40,60,20]; // 여기에써도됨
+        // 대신 함수안에들어가면 return 으로 끝나기때문에 배열호출?이 안된다!
+        function avrg (array) {// 매개변수1개 - 배열을 들고옴
+            let avrg =0;
+            let sumNum =0;
+
+            for (num of array) {
+                sumNum+=num; // 배열안의 모든값을 더함
+            }
+            avrgNum = sumNum / (array.length);
+            return avrgNum; //평균값을 반환
+        }
+    </script>
+</head>
+<body>
+    <script>
+        let numArray = [30,60,40,60,20];
+        document.write(avrg(numArray));
+    </script>
+</body>
+</html>

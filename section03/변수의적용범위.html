@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //지역변수와 전역변수 알아가기
+        if (true) {
+            let innernum = 10;  
+            // 지역변수, 함수같은 블럭안에서만 사용할수 있음
+            // 블록 안의 변수지정let은 블록이 끝나면 사라진다
+            console.log(innernum);
+        }
+        let outernum = 20; 
+        // 전역변수, 전반적(전체)에서 사용가능
+        console.log(outernum);
+
+        //for문을 이용해서 
+        let sum =0; // 전역변수
+        for (let i = 0; i<5; i++) {//i값은 지역변수
+            console.log(outernum);
+        }
+
+        //함수를 이용해서
+        function sumNum(n) {
+            let sum = 100; // 지역변수
+            for (let i=0; i<=n; i++) {
+                sum += i;
+            }
+            //return sum;
+        }
+        sumNum(3);
+    </script>
+</body>
+</html>

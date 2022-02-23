@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+         // 실습 2번
+         // 동일한 이름의 함수, 매개변수의 개수가 1개 <호출X>
+         function introName(name, address) {
+            document.write(`<p>안녕하세요 ${name} 입니다. 반갑습니다.</p>`);
+        }
+
+         // 동일한 이름의 함수, 매개변수의 개수가 2개 <호출O>
+         function introName(name, address) {
+            document.write(`<p>안녕하세요 ${name} 입니다. ${address}에 거주중입니다</p>`);
+        }
+        
+        // 동일한 함수일경우 매개변수가 더 많은함수를 실행한다
+        // 이 파일을 실행하면 밑에꺼만 출력됨
+        // 그래서 함수이름은 다르게 해주는게 제일 좋다
+
+    </script>
+</head>
+<body>
+    <script>
+    introName("홍길동");
+    </script>
+</body>
+</html>

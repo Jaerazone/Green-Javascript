@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        // 1. 변수 let, const 맞는 코드작성하기
+        let name = "홍길동";
+        name = "홍길동";
+
+        // 2. 자료형 : string, number, boolean, undefined, null 아래 자료형을 적으세요
+        // 1) "Stydy"  2)3040  3)true  4)"False"  5)302.1
+        let String = "Stydy";
+        let number = 3040;
+        let boolean = true;
+        let age;
+        document.write(age); // undefined
+        //302.1 number
+
+        // 3.형 변환 : String(), Number()
+        // 아래 함수를 콘솔창에 입력했을 때 결과값을 적으세요.
+        // 1) Stirng(123);  2) Number(“123”);  3) Number("string");
+        // 답 "123", 123, NaN
+
+        /*
+        4. 기본 연산자 : +, -, *, /, %, = 아래 표현식을 콘솔창에 입력했을 때 결과값을 적으세요. 
+        1) 10/4   2) 10%2   3) let sum = 1+2+3; 일 때 sum의 값을 적으세요. 
+        4) 변수 num에 어느 수를 넣어도 변수 choice(0~4) 사이의 수가 나오게 하려면 
+            어떤 연산자를 사용해야하는지 적으세요
+            let choice = num _ 5
+        */
+        // 답 : 1번 2.5, 2번 0, 3번 6, 4번 %(나누었을때 나머지값이 0~4가 나오게됨)
+
+        /*
+        5. 비교 연산자 : >, <, >=, <=, == !=, === 아래 표현식을 콘솔창에 입력했을 때 
+        결과값을 적으세요. 1) “word" != "javascript" 2) 0 == "" 3) 0 === false
+        */
+        // 1) 같은내용이 아니라서 true 2) 비어있는 값이라 0 => false=false라서 true  3) 숫자형 ===불린형 , 같지않아서 false
+
+
+/*
+6 if문 true, false / if / else / else if
+1) 10과 20 중 큰 수를 출력하는 조건문을 만드세요 
+ (단, 10과 20은 변수 두어 비교한다)
+2) 점수가 65일 때, 70이상은 합격, 60이상은 보충수업 60미만은 재수강이라 출력하는 조건
+문을 만드세요
+*/
+        let nu1 = 10;
+        let nu2 = 20;
+        if (nu1>nu2) {
+            document.write("<br><br>"+nu1);
+        }
+        else {
+            document.write("<br><br>"+nu2);
+        }
+
+        let score = 65;
+        if(score >= 70) {
+            document.write("<br><br>합격");
+        }
+        else if (score >=60) {
+            document.write("<br><br>보충수업");
+        }
+        else {
+            document.write("<br><br>재수강");
+        }
+/*
+    7. 논리 연산자 ||, &&, !
+    let num = 160일까 아래 문장의 결과값을 작성하세요
+    1) (num < 100) || (num >170) 
+    2) (num > 140) && (num < 180)
+    3) !(num <120)
+*/
+        let num = 160;
+        if ((num<100) || (num>170)) {
+            document.write("<br><br> 100보다 작거나 또는 170보다 큰값이다");
+        }
+        if ((num > 140) && (num < 180)) {
+            document.write("<br><br> 140보다 크고 180보다 작은값이다");
+        }
+        if (!num<120) {
+            document.write("<br><br> 120 보다 크다");
+        }
+//8 while문 
+//1) while문을 사용하여 1~10 까지 출력하세요
+document.write("<br><br>");
+        let i= 1;
+        while (i<=10) {
+            document.write(i + " ");
+            i++;
+        }
+/*9. for문
+1) for문을 사용하여 10~1 까지 출력하세요
+2) for of를 사용하여 let numArray = [1,2,3,4] 의 요소 값을 출력하세요
+3) for in을 사용하여 let flowerArray = ["해바라기",“튤립”,“장미”]의 요소 값을 출력하세요 */
+document.write("<br><br>");
+        for (let j=10; j>0; j--) {
+            document.write(j + " ");
+        }
+document.write("<br><br>");
+        let numArray = [1,2,3,4];
+        for (num of numArray) { // 배열안의 값들을 뽑아낸다
+            document.write(num + " ");
+        }
+document.write("<br><br>");
+        let flowerArray = ["해바라기","튤립","장미"];
+        for ( i in flowerArray) {
+            document.write(flowerArray[i] + " ");
+            // 인덱스값으로 flowerArray 들고와야하고, 안에 i는 포뒤에 있는거
+        }
+/*
+    10. break, continue
+    1) while(true) 반복문에서 break;를 이용하여 1~100까지 출력하세요
+    2) for 반복문에서 1~50까지 출력할 때, continue를 이용하여 3의 배수를 제외하고 출력하세
+    요
+    */
+document.write("<br><br>");
+        let countNum = 1;
+        while(true) {
+            document.write(countNum +" ");
+            //if (countNum == 100) { // 위치에 따라 조건이 달라질수있다
+                //break;
+            //}
+            countNum++;
+            if (countNum == 101) { 
+                break;
+            }
+        }
+
+document.write("<br><br>");
+        for (let k=1; k<=50; k++) {
+            if (k%3==0) {
+                continue;
+            }
+            document.write(k +" ");
+        }
+    </script>
+    
+</body>
+</html>

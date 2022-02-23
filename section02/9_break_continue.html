@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        // break 문
+        let count =0;
+        let pw = "green";
+        while (pw!="green") {
+        //프롬프트창이 계속떠서 pw가 아닌걸로 while문 밖으로 나가려고 적어둠
+        //원래는 아래 true 적으면된다~
+        // while (true) { 
+            pw = prompt ("비밀번호를 입력해주세요");
+            count++;
+
+            if (pw == "green") {
+                document.write(`${count}회 만에 맞췄습니다.`);
+                break;
+                //break는 가장 가까운 반복문을 빠져나간다고 생각하면됨
+                // - while에 해당
+            }
+            if(count == 5) {
+                document.write("시도횟수를 초과했습니다.");
+                break;
+            }
+        }
+
+        //
+        //continue 문
+        for (let i=1; i<=10; i++) {
+            //7일때 출력을 하지 않으려고 함
+            if (i != 7) {
+                document.write(i);
+            }
+        }
+        // 위아래 같은 내용입니다.
+        for (let i=1; i<=10; i++) {
+            //7일때 출력을 하지 않으려고 함
+            if (i == 7) {
+                continue;
+                //i가 7이면 아래 document 부분 실행하지않고 반복문 다시실행
+                //i가 7이 아니면 아래 그대로 실행, document 
+            }
+            document.write(i);
+        }
+    </script>
+</body>
+</html>

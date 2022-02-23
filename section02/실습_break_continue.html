@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        ////////////
+        //////////// break문과 continue문 실습
+        ////////////
+        // break를 사용하여 1~10까지 출력한 후 반복문을 빠져나오세요
+        // while(true) {}
+        /*
+        let num = 1;
+        while (num <= 10) {
+            document.write(num + "<br>");
+            num++;
+        }
+        */ 
+        //위와 같은 내용이며, 아래가 선생님 답안
+        let num = 1;
+        while (true) {
+            document.write(num + "<br>");
+            if (num == 10) {
+                break;
+            }
+            num++;
+        }
+                
+        document.write("<br><br>");
+        //continue를 사용하여 1~10까지의 숫자 중 3의배수를 제외하고 출력하세요
+        //for (; ;) {}
+        for (let i=1; i<=10; i++) {
+            //7일때 출력을 하지 않으려고 함
+            if (i%3 == 0) {
+                continue;
+            }
+            document.write(i);
+        }
+
+    </script>
+</body>
+</html>

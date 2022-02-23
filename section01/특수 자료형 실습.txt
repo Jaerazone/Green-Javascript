@@ -1,0 +1,52 @@
+let num =10;
+undefined
+
+let text = ":숫자입니다";
+undefined
+
+let numText =num+text;
+undefined
+
+numText
+'10:숫자입니다'
+
+typeof(num)
+'number'
+
+typeof(text)
+'string'
+
+typeof(numText)
+'string'
+	// num이 자동으로 자료형으로 들어가있음을 알수있다
+
+
+
+
+/////////////////////////////////////
+
+const MAX_WIDTH =2;
+undefined
+
+MAX_WIDTH
+2
+
+MAX_WIDTH = 3;
+VM1930:1 Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:1:11
+
+	// const 값으로 MAX_WIDTH값 지정했기때문에
+	// 값이 더이상 변하지않는다
+
+/////////////////////////////////////
+
+
+NaN
+NaN
+
+isNaN( Number ('string') )
+true
+
+Number("String")==NaN
+false
+

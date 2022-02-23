@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        ////////////
+        //////////// do while 문 실습
+        ////////////
+        // Letpw = "green";
+        // 지정된 비밀번호를 맞출때까지 프롬프트 창을 반복하세요
+        // +count 변수를 활용하여 비밀번호 시도한 횟수를 출력하세요.
+        let Letpw ="green";
+        let count = 0;
+        do {
+            Letpw = prompt("비밀번호를 맞춰주세요");
+            count ++;
+        }
+        while (Letpw != "green" && (count<5))
+        // 횟수가 5 이하일때 참이고, 패스퉈드가 틀렸을때 참이다.
+        document.write("<br> 비밀번호 시도 횟수 : " + count);
+
+
+
+    </script>
+</body>
+</html>

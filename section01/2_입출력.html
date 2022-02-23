@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <h1 id="title"></h1>
+    <input type = "text" value="미리지정된값" name="text" id="inputText">
+    <p id="textCopy"></p>
+
+    <script>
+        document.getElementById("title").innerHTML="스크립트에서 타이틀을 바꿨습니다";
+        /*
+        document.getElementById("title") : title부분을 찾아라! 
+        .innerHTML : 그안에 값을 넣어준다
+        */
+
+        let text = document.getElementById("inputText").type;
+        document.getElementById("textCopy").innerHTML=text;
+
+        let name = prompt("이름을 적어주세요", "홍길동");
+        document.write(name);
+        console.log(typeof(name));  // 타입은 '스트링' 이라고뜸
+
+        
+
+    </script>
+</body>
+</html>

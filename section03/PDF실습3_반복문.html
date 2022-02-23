@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+//8~100사이 홀수값
+        let first = 8;
+        let last = 100;
+
+        document.write("8부터 100사이의 홀수값 : ");
+        for (i=first; i<=last; i++) {
+            if (i%2 == 1) {
+                document.write(i+ " ");
+            }
+        }
+document.write("<br><br>");
+// 30~1까지 출력 후 합계산
+        let startNum1 = 30;
+        let sum = 0;
+        document.write("30부터 1까지 출력 : ")
+        for (let i=startNum1; i>0; i--) {
+            document.write(i + " ");
+            sum = sum + i;
+            //sum += i;
+        }   
+        document.write("<br>30부터 1까지의 총 합 : " +sum);
+document.write("<br><br>");
+// 5팩토리얼 값 구하기
+
+        let startNum2 = 5; 
+        let fact = 1;
+        for (let a = startNum2; a>0; a--) {
+            // fact = fact*a;
+            fact *= a;
+        }   
+        document.write("<br>5팩토리얼 : " +fact);
+
+document.write("<br><br>");
+// 가로 세로길이가 4인 정사각형 아래와같이 숫자를 채워넣는 코드
+            
+            document.write("for문으로 정사각형 4x4배열 숫자판 만들기<br>");
+            let n =4; // 가로 세로 길이
+            let allNum =1; // 1 ~ n*n까지 
+
+            for (let i = 0; i<n ; i++ ) {
+                for (let j=0; j<n ; j++) {
+                    document.write(allNum+ " ");
+                    allNum++
+                }
+                document.write("<br>");
+            }
+
+            document.write("<br>for, if문으로 정사각형 4x4배열 숫자판 만들기<br>");
+            for (let i=1; i <=n*n; i++) {
+                document.write(i +" ");
+                if (i %n ==0) { // n이 4라서 
+                    document.write("<br>");
+                }
+            }
+
+
+    </script>
+</body>
+</html>

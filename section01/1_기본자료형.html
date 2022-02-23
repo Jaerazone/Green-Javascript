@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+    
+
+    <script>
+        console.log("hi");
+        document.write("기본자료형-숫자<br>");
+        document.write(3);
+        document.write("<br>");
+        document.write(4+5);
+        document.write("<br>");
+        document.write(4*5);
+        document.write("<br>");
+        document.write((1+2)*10);
+        document.write("<br>");
+        document.write(4/5);
+        document.write("<br>");
+        document.write(5%4);
+        // 나머지 연산자의 정수만 이용해서 사용한다
+
+        document.write("<br><br> 기본자료형 -문자열<br>");
+        document.write('홑따옴표를 사용해서 문자열을 넣을수 있다<br>');
+        document.write("This is 'String'.<br>");
+        //document.write("\n줄바꿈을 \n할 수 있습니다.");
+        //console창에서 확인이 가능하다.
+        document.write("안녕"+"하세요<br>");
+        document.write(`1+3=${1+3}<br>`);
+        // esc키 밑에 있는 ``로 해주고, ${} 뒤에있는것은 qr식으로 값나옴
+        
+        console.log("반갑습니다"+"홍길동입니다");
+        console.log("\t반갑습니다\n홍길동입니다");
+        document.write(`${100*273+23}`);
+        // 문자열$을 넣으려면 ``를 쓰면된다
+
+        document.write("<br><br> 기본자료형 불 boolean<br>");
+        document.write(true);
+        document.write("<br>");
+        document.write(50<60);
+        document.write("<br>");
+        document.write("의자"=="책상");
+        document.write("<br>");
+        document.write(!true);
+        document.write("<br>");
+        document.write(true || false);
+        document.write("<br>");
+        document.write(true && false);
+
+        /*
+        ! 논리부정 , not 반대로
+        || 논리 합,  or 또는 
+        0101 +
+        1010
+        ----
+        1111 (1은 true, 0은 false)
+
+        && 논리 곱, and 둘다. 그리고 : 
+        0101 or
+        1010
+        ----
+        0000
+
+        */
+        document.write("<br><br><br>");
+        document.write("연산자 실습<br>");
+        document.write(1==1);
+        document.write("<br>");
+        document.write(3>=1);
+        document.write("<br>");
+        document.write(1!=4);
+
+        document.write("<br><br>");
+        document.write("안녕"!="hi");
+
+        document.write("<br><br>");
+        document.write(true || false);
+        
+
+        document.write("<br><br><br>");
+        document.write("변수선언 및 초기화<br>");
+        let number = 100;
+        document.write(number+100);
+
+        let string = "줄바꿈이 들어간\n 문자열입니다";
+        document.write(string);
+        console.log(string);
+        //재할당 : 이미 만들어진 변수에 다시 값을 넣는 것
+        //let 으로 string을 두번지정하면 오류나서 string값만주고 재할당 해야함 (아래내용)
+        string = "값을 수정했습니다";
+        console.log(string);
+
+        //let은 같은선언두번하면 오류나는데
+        //var은 같은선언두번해도 오류가 안난다
+        //다른사람들이랑 자료 같이 쓰게되면 var 사용시 값이 겹치기때문에, let을 사용하는 것이 좋다
+        var num =1;
+        console.log(num);
+        var num =40;
+        console.log(num);
+        // let은 선언은 한번만 가능하고 재할당을 통해 값을 넣어줄 수 있다
+        // var는 선언과 재할딩이 여러번 가능하다
+
+        let sum = 1+10+100;
+        console.log(sum);
+
+
+        document.write("<br><br><br>");
+        document.write("변수 실습<br>");
+        let name = "홍길동"
+        let age = 20;
+        let phone = "010-123-4567"
+        console.log(name);
+        console.log(age);
+        console.log(phone);
+
+        name = "성춘향";
+        console.log(name);
+
+
+        let hi ="hello world";
+
+        let num1 = 400;
+        let num2 = 30;
+
+        let currentHumidity = 70;
+        let rainHumidity =65;
+
+        let isRain = currentHumidity>=rainHumidity;
+        console.log(isRain);
+        
+        console.log("step 복합대입연산자");
+        let step =2;
+        console.log(step += 2);
+        console.log(step = step+2);
+        // 자기자신의 변수에게 2씩 더해주는 표현식
+        console.log(step -= 2);
+        console.log(step *=2);
+        console.log(step /=2);
+
+        console.log("oneCount 증감연산자");
+        let oneCount =0;
+        oneCount++;
+        console.log(oneCount);
+        console.log(oneCount++);
+        console.log(oneCount);
+        console.log(++oneCount);
+
+        console.log("sumNum 복합대입연산자");
+        let sumNum =1;
+        console.log(sumNum +=1); // 2
+        console.log(sumNum *=1); // 2
+        console.log(sumNum /=1); // 2
+        console.log(sumNum -=1); // 1
+
+        console.log("sumNum 증감연산자");
+        console.log(sumNum);   // 1
+        console.log(sumNum++); // 1
+        console.log(sumNum);   // 2
+        console.log(++sumNum); // 3
+
+        // 특수 자료형
+        let undefinedNum;
+        let unllNum = null;
+        console.log(undefinedNum);
+        console.log(unllNum);
+        // undefinedNum 은 값을 지정해주지않은 undefined 자료형
+        // unllNum 은 값을 임의로 비워둔 null자료형
+        // 두개의 값은 비교했을때 참.
+
+        typeof(undefinedNum);
+        typeof( Boolean (unllNum));
+        // 안에 들어간 자료형을 확인하는 함수
+        // Boolean : 형 변환함수
+        // 각각의 자료형인 Number, String, Booleadn은 형변환함수를 이용해서
+        // 자료형을 강제로 바꿀수 있다
+
+        console.log(Number("string"));
+        // 숫자로 형변환한 값이 숫자가 아닐때 nan(not a number), 
+        //     ★★★(숫자값이 아니다 = NaN)★★★
+        // Number() <괄호안에있는값이 문자라면 숫자로 변형해준다!
+        console.log(Number("string") == NaN);
+
+        const MAX =100;
+        console.log(MAX);
+
+    </script>
+</body>
+</html>

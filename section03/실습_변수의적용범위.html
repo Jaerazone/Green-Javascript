@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //전역변수와 지역변수
+        let maxCount = 10; // 전역변수  // ES6 모던자바스크립트에서 추가
+        for (let checkCount = 1; checkCount<=maxCount; checkCount++) {
+            // checkCount지역변수이지만
+            // let으로쓰면 지역변수인데
+            //var로 쓰면 전역변수처럼 사용가능하다
+            // 대신 프로그램이 살아있는동안 변수가계속 살아있어서
+            // 메모리를 차지하기때문에 지역변수로 추천!!
+            document.write(maxCount+"중의 "+checkCount+"<br>");
+        }
+        
+    </script>
+</body>
+</html>

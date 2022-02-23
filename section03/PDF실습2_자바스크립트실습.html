@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+// 3페이지
+// 두변길이 사각형 둘레와 넓이
+        let width = 2;
+        let height = 15;
+        document.write("사각형 둘레 :" + (width+height)*2);
+        document.write("<br>사각형 넓이 :" + (width*height));
+document.write("<br><br>");
+
+// 40분을 초로 바꿔서 출력하는 코드
+        let minute = 40;
+        document.write("40분을 초로 :" + (minute*60));
+document.write("<br><br>");
+
+//세변의 길이 10,20,12 
+        let a = 10;
+        let b = 20;
+        let c = 12;
+        let long;
+
+        if ((a>b) && (a>c)) {
+            long = a;
+            document.write("가장 긴 변은 a : "+ long);
+            if (long < b+c) {
+                document.write("<br>삼각형이 될 수 있습니다");
+            }
+        }
+        else if ((b>a) && (b>c)) {
+            long = b;
+            document.write("가장 긴 변은 b : "+ long);
+            if (long < a+c) {
+                document.write("<br>삼각형이 될 수 있습니다");
+                if (long*long == (a*a + c*c)) {
+                    document.write("<br> 직각삼각형 입니다");
+                }
+                else if (long*long < (a*a + c*c)) {
+                    document.write("<br> 예각삼각형 입니다");
+                }
+                else {
+                    document.write("<br> 둔각삼각형 입니다");
+                }
+            }
+        }
+        else if ((c>a) && (c>b)) {
+            long = c;
+            document.write("가장 긴 변은 c : "+ long);
+            if (long < a+b) {
+                document.write("<br>삼각형이 될 수 있습니다");
+            }
+        }
+        else {
+            document.write("<br>삼각형이 될 수 없습니다");
+        }
+
+document.write("<br><br>");
+// 키와 몸무게를 170cm, 66kg 계산
+        let key = 170;
+        let body = 66;
+
+        //BMI 지수 : 몸무게kg/ 키m의 제곱
+        let bmi = body/((key/100)*(key/100));
+        document.write ("나의 BMI 지수는 : " +bmi);
+
+        if (bmi < 18.5) {
+            document.write("<br>저체중입니다");
+        }
+        else if (bmi <23) {    
+            document.write("<br>정상입니다");
+        }
+        else if (bmi <25){ 
+            document.write("<br>과체중입니다");
+        }
+        else if (bmi <30) {
+            document.write("<br>비만입니다");
+        }
+        else {
+            document.write("<br>고도비만입니다");
+        }
+
+document.write("<br><br>");
+//나이가 20, 2구간을 이용할때 지하철 요금표 계산하는 코드작성
+// 나이와 구간은 변수로 둔다
+        let age = 20;
+        let gugan = "2구간";
+
+        if (gugan == "2구간") {
+            if (age >=19) {
+                document.write("1500원 입니다");
+            }
+            else if (age >=13) {
+                document.write("1200원 입니다");
+            }
+            else if (age >=6) {
+                document.write("750원 입니다");
+            }
+        }
+        else if(gugan == "1구간") {
+            if (age >=19) {
+                document.write("1300원 입니다");
+            }
+            else if (age >=13) {
+                document.write("1050원 입니다");
+            }
+            else if (age >=6) {
+                document.write("650원 입니다");
+            }
+        }
+
+
+document.write("<br><br>");
+
+//현재 학점 140, 평점 3.5일때
+// 이수한 학점 140이상, 평점 3.0이상이면 졸업가능, 아니면 불가
+        let schoolScore = 140;
+        let schoolAv = 3.5;
+
+        if (schoolScore>=140 && schoolAv>=3.0) {
+            document.write("졸업가능합니다~")
+        }
+        else {
+            document.write("졸업이 힘듭니다~")
+        }
+document.write("<br><br>");
+// 주원 월수금일 알바감
+// 현재 요일 월일때 가는날이면 oh my god, 아니면 enhoy출력
+        let day = "월";
+
+        switch(day) {
+            // 1.월 2.화 3.수 4.목 5.금 6.토 7.일
+            case "월":
+            case "수":
+            case "금":
+            case "일":
+            document.write("oh my god");
+            break;
+            
+            case "화":
+            case "목":
+            case "토":
+            document.write("enjoy");
+            break;
+
+            default :
+            document.write("그런요일은 없습니다");
+        }
+
+    </script>
+</body>
+</html>

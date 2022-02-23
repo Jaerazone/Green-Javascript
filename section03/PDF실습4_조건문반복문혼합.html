@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+// 1부터 20까지 정수중에 2또는 3배수가 아닌 수의 총합
+        document.write("<h1>조건문과 반복문 혼합</h1>");
+        let sum2 = 0;
+        for (let i=1; i<=20; i++) {
+            if (i%2==0 || i%3==0) {
+                continue;
+            }
+            sum2 = sum2+i;
+            // sum2 += i;
+        }
+        document.write("총 합계는 : " + sum2);
+        
+document.write("<br><br>");
+// 6의 약수를 오름차순으로 출력하는 코드
+        let  num3 = 6;
+        for (let i=1; i<=num3; i++) {
+            if (num3%i !== 0) {
+                continue;
+            }
+            document.write(i +" ");
+        }
+        document.write(" <= " + num3 +"의 약수들");
+
+document.write("<br><br>");
+//두개의 주사위를 던졌을때, 두눈의 합이 6이되는 모든 경우의수
+        for(let n=1; n<=6; n++) { // 하나의 주사위(1~6)
+            for (let m=1; m<=6; m++){ // 다른 하나의 주사위(1~6)
+                if(n+m == 6) 
+                document.write(n +" "+ m + "/ " );
+                }
+        }
+
+document.write("<br><br>");    
+//별 출력하기
+        for (let q=0; q<5; q++) { // 1~5까지 돌림
+            for (let w=0; w<=q; w++) {
+                document.write("* ");
+            }
+            document.write("<br>");
+        }
+document.write("<br><br>");
+
+</script>
+
+</body>
+</html>

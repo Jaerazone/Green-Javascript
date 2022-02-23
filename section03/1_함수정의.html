@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./1_함수.js"></script>
+<!--
+    <script>
+        //★★★★함수를 설정할때 헤드위에 스크립트로 설정할수 있다★★★
+        //★★★★혹은 하단부 스크립트에 넣는것 , 총 2가지 방법이 있다★★★
+
+        //명시적 함수
+        //함수를 호출하기전에 선언문은 head의 script안에 작성
+        // 미리준비
+        function hi(num) { // num: 매개변수로 사용
+            // 부르면 바로 올수 있게 (매개변수)는 넣지 않았다
+            document.write(`<p>${num} : hi<p>`);
+        }
+        function squr (num) { // num: 매개변수로 사용
+            return num*num; //return값은 함수의 결과값을 되돌려줌
+        }
+        // 인수를 몇개 사용하는지 모를때
+        // 여러개의 인수가 들어올 때
+        function add() {
+            //여러개의 인수는 arguments에 배열로 저장
+            let count = arguments.length;
+            let sum = 0;
+            for (num of arguments) {
+                //배열이기때문에 for...of사용가능
+                sum += num; 
+            }
+            document.write(`총갯수 : ${count}, 합: ${sum}`);
+        }         // console로 확인 가능 // add(1,2,3) 이렇게 적음댐
+        
+    </script>
+    -->
+</head>
+<body>
+    
+    <h1></h1>
+
+    <script>
+        let array = [1,2,3,4];
+        let arraySqur = new Array();
+        arraySqur[0] = 1;
+        for (let i=0; i<10; i++) {
+            hi(i); // 함수 이름과 괄호안에 인수값을 넣어서 호출
+            document.write (squr(i)); // return값을 출력
+            arraySqur[i] = squr(i); // return값을 할당 // console화면을 통해 확인가능 (arraySqur)
+            
+        }
+        hi(); // 인수값이 없을경우 undefined 값, undefined 자료형
+        hi(10,100); // 초과하는 인수값은 사용하지 않는다.
+</body>
+</html>

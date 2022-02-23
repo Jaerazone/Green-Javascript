@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        
+        //자료형, 연산자, 변수
+        //Number, String, Boolean, undefined, null
+        // + - / * , %(나머지 연산자), =(대입 연산자)
+        // 변수 = 값 (대입)
+        // 변수의 특징 : 첫번째 글자 숫자 안되고, 두단어 이상 붙을때 첫글자들은 대문자로
+        //          : num, numArray
+        // 15, "안녕" (리터럴 값을 바로 넣을 수 있다), 15-20(표현식의 값), 함수의 값(함수)
+        
+        //((((아래예시))))각각의 자료형들을 변수에 넣어 사용할수 있다
+        let string ="문자열입니다"; //문자열 넣을수있고
+        let num = 100; // 숫자형도 넣을수있다
+        let checkLight = true; //불리형같은경우 트루로 넣을수도있지만
+        CheckLight = 100>40; // 이렇게 바로 식으로 넣을수도있고
+
+        let watte = 50; // 현재 기기에 필요한 전기값
+        let elect = 60; // 지금 흐르는 전기가 60
+        checkLight = watte < elect ; // 현재 전기의 양이많아야 불이 켜진다
+
+        //조건문과 반복문 = 제어문
+        // if (참일때 실행), else (거짓일때 실행, 조건문 X), 
+        // 더많은 조건을 주기위해 else if(새로운 조건)
+        // 조건이 값으로 들어올때 ex) A,B,1,2,3
+        // 스위치 switch - case 값 :  break;
+
+//결과값이 boolean으로 나오는것을 : 조건식이라고함
+// >, <, ==, 혹은 논리연산자(&&, ||, !)를 넣어 계산도 가능
+        if (true){
+            document.write("항상 참이므로 출력됩니다");
+        }
+
+        let onSwitch = true;
+        // + 스위치를 넣어서 스위치가 켜졌을때 켜짐, 스위치가 꺼졌을때 꺼짐 (조건추가)
+        if (checkLight && (onSwitch)) { // 전기가 들어왔을때 켜짐
+            document.write("<br>켜졌다");
+        }
+        else { // 전기가 없을때 꺼짐
+            document.write("<br>꺼졌다");
+        }
+
+        let value = 1; // switch에서 확인할 값을 정해주고
+        switch (value) { // 변수를 통해서 값 확인
+            case 1 :  // case 뒤에 비교할 값 작성
+                console.log("1입니다");
+                break; // 현재 case 출력을 위한 break;
+            case 2 : 
+                console.log("2입니다");
+                break;
+            case 3 : 
+                console.log("3입니다");
+                break;
+            default : // default를 넣어서 else처럼 사용할수있다
+                console.log("없는 숫자입니다");
+        }
+        // 반복문 - for(횟수), while(조건이 참이라면 반복)
+        //for (let i=0; i<10; i++)
+        //while (조건식이 참일때) {} ->조건식이 반드시 거짓이 되어야 반복문 빠져나올수있다!
+        //그래서 증가식이라면 초기화값을 만들어주고, 증가값을 적어줘야함
+
+        document.write("<p>1</p>");
+        document.write("<p>여러줄의 내용</p>"); // 이 내용이 똑같이 반복되어야할때
+        document.write("<p>2</p>");
+        document.write("<p>여러줄의 내용</p>"); // 코드가 길어지기때문에 for문을 쓴다
+        document.write("<p>3</p>");
+        document.write("<p>여러줄의 내용</p>"); // 아래  for문
+        document.write("<p>4</p>");
+        document.write("<p>여러줄의 내용</p>");
+
+        for (let i = 0; i <5; i++) {
+            document.write("<p>" +i+ "</p>");
+            document.write("<p>여러줄의 내용</p>");
+        }
+
+        let a = 0;
+        while (a<5) {
+            document.write("<p>" +a+ "</p>");
+            a++;
+        }
+        //for문 - 배열과 같이쓸수있다
+        //["일", "일"] 여러개의 값을 저장
+        //인덱스를 이용해서 사용.
+        let stringArray1 = []; // 배열을 생성
+        let stringArray2 = new Array(); // [빈칸을 생성]
+
+        stringArray1[0] = "영번째 인덱스";
+        
+
+
+        
+    </script>
+</body>
+</html>

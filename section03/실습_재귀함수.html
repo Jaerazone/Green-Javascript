@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // 재귀함수 실습
+        // 5팩토리 구하기 (for문과 재귀함수)
+        // for문
+        let facFor = 1;
+        for(let i = 1; i<=5; i++) {
+            facFor *= i;
+        }
+        document.write("<p>"+facFor+"</p>");
+
+        //재귀함수
+        function fac(n) { // n번 반복함
+            if(n>0) {
+                return n *= fac(n-1);
+            }
+            else {
+                return 1; // 종료
+            }
+        }
+        document.write(fac(5));
+    </script>
+</body>
+</html>

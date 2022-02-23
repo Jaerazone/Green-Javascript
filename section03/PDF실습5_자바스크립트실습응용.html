@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        let group =["A","B","C","D","E"]; // 조 배열 생성
+
+        for (g of group) { // 위의 group에서 g에 값을 넣어주기때문에 아래 g만 출력하면됨!
+            document.write(g +" ");
+            for(let i= 0; i<6; i++){
+                let randomNum = Math.random()*45+1; // 1.xx~45.xx 실수값
+                randomNum = parseInt(randomNum); // 1~45 정수값만 출력
+                document.write(randomNum + ". "); // `` 백틱에 넣어서 표현식 사용가능
+            }
+            document.write("<br>");
+        }
+
+
+    </script>
+</body>
+</html>
