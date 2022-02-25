@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mini project</title>
+    <link rel="stylesheet" href="./css/common.css">
+</head>
+<body>
+<!--
+    <body style="background: url(./img/0.jpg);">
+    사진을 넣기위해 css에서 백그라운드를 이용했다-
+    하나의 배경값을줄때는 이거로함 -->
+    
+    <h1 id="clock">00:00:00</h1>
+    <h1 id="greeting"></h1>
+
+
+<!-- 아이디 폼 -->
+    <form id="login-form">
+    <!--이름입력받을 input을 만들것, submit으로 전달-->
+        <input type="text">
+        <input type="submit" value="Log in">
+    </form>
+
+
+    <!-- 메모 폼 -->
+    <form id="memo-form" class="hidden">
+        <!--hidden만 넣으면 안보이기때문에 자바스크립트에서 수정함!-->
+        <input type="text" placeholder="메모를 입력해주세요." required >
+        <!--required 빈값이면 실행안됨-->
+        <input type="submit" value="작성" >
+    </form>
+
+
+    <div class="flex" id="memo-board"> </div>
+
+    
+    <!-- body 아래 스크립트 시작 , js파일연결 -->
+    <script src = "./js/login.js"></script>
+    <script src = "./js/memo.js"></script>
+    <script src = "./js/background.js"></script>
+    <script src = "./js/clock.js"></script>
+
+</body>
+</html>
+<!--
+    HTML : 문서의 내용, 순서 (눈에바로보임)
+    CSS : 문서의 스타일 꾸밈효과 (눈에바로보임)
+
+    JS sc : HTML태그와 CSS의 속성을 들고와서 수정하고, 값을 저장
+    (눈에안보여서 console을 써서 확인함)
+-->
