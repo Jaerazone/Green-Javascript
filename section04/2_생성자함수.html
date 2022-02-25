@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        //생성자 함수를 이용한 객체 생성
+        // Dog - 속성 : name, age, 
+        // 메소드 : intro {age살입니다 return}
+        function Dog(name, age) { // 값이 들어가는 생성자 함수 틀!
+            this.name = name;
+            this.age = age;
+            this.intro = function () {
+                return `${this.age}살입니다`;
+            };
+        }
+
+        let myDog = new Dog("초코",1);
+    //콘솔창
+        // myDog.intro()
+        // let yourDog = new Dog("강아지",2)
+        // yourDog.intro()
+
+        //
+        let memo = {
+            title : "오늘할일",  //title 속성에 문자열 값
+            todo : { // todo 속성에 객체 값
+            //todo객체는 3개의 배열을 가지고있음
+                moring : ["청소","준비"], 
+                afternoon : ["수업"],
+                evening : ["정리","독서"]
+            }
+        };
+    //콘솔창
+        //memo
+        //memo.todo.evening[0]
+    </script>
+</body>
+</html>

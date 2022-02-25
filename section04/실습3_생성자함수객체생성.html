@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //생성자 함수를 이용한 객체 생성 실습1
+        //생성자함수 : Student 
+        //속성 : name, score
+        function Student (name,score) { // 기계 붕어빵 틀
+            this.name = name;
+            this.score = score;
+        //메소드 : study {10씩 증가}, showScore{score값 리턴}
+            this.study = function () {
+                this.score += 10;
+            };
+            this.showScore = function () {
+                return this.score;
+            };
+        }
+        let myStudent = new Student ("홍길동",70); // 붕어빵 안에 
+        let yourStudent = new Student ("성춘향",80);
+
+        //생성자 함수를 이용한 객체 생성 실습2
+        //생성자함수 : BusCard 
+        //속성 : money
+        function BusCard (money) {
+            this.money = money;
+        //메소드 charge : f(금액 {money값 금액만큼 증가}
+        // takeBus : 
+            this.charge = function (chMoney) {
+                this.money += chMoney;
+            };
+            this.takeBus = function() {
+                if(this.money<1500) {
+                    console.log("잔액이 부족합니다");
+                }
+                else {
+                    return this.money -= 1500;
+                }
+            };
+            this.showMoney = function () {
+                return this.money;
+            };
+        }
+
+        let myBusCard = new BusCard(1500);
+        let yourBusCard = new BusCard(1000);
+
+        //생성자 함수를 이용한 객체 생성 실습3
+        //생성자함수 : Messege
+        //객체 속성 : name, content, time
+        function Messege (name, content="") {
+            this.name = name;
+            this.content = content;
+            this.time = new Date();
+        //객체 메소드 
+            this.modifyMessege = function (messege) {
+                this.content = messege;
+            };
+            this.showMessege = function() {
+                return `${this.name}님께서 ${this.content}를 ${this.time}에 보냈습니다`;
+            };
+        }
+        let myMessege = new Messege("홍길동", "반갑습니다", "0224");
+        let yourMessege = new Messege("성춘향", "안녕하세요", "0224");
+
+        //delete연산자를 이용한 삭제 실습4
+    /*콘솔창에서 작성함
+        delete myMessege.content
+        ->true
+        delete myMessege.name
+        ->true
+        Messege.showMessege()
+        -> 에러남
+        */
+
+        //for ...in 루프 실습5
+        //앞서 작성한 yourMessege의 속성과 메서드의 이름을 출력
+        for (let x in yourMessege) {
+            console.log(x+": "+yourMessege[x]); // yourMessege["name"]
+        }
+        let string ="";
+        // 앞서 작성한 myBusCard의 속성과 메서드와 각 값들을 출력
+        for (let x in myBusCard) {
+            string = string+x+": "+myBusCard[x]+"....";
+        }
+        console.log(string);
+
+        //사용자 객체 실습6
+        //동물병원 진료차트
+        //생성자함수 이름과 매개변수
+        function AnimalChart (name,kind,age) {
+            this.name = name;
+            this.kind = kind;
+            this.age = age;
+            this.sickness = ""; //빈값으로 생성
+            this.condition = ""; //빈값으로 생성
+        //메서드작성 receive, confirm
+            this.receive = function (sickness,condition) {
+                this.sickness = sickness;
+                this.condition = condition;
+                console.log (`강아지의 병명 : +${this.sickness} + / 강아지 컨디션 : +${this.condition}`);
+            };
+            this.confirm = function () {
+                for(let x in this) {
+                    console.log(typeof x); // 문자열로 들어왔는지 아닌지 확인
+                    console.log(typeof this[x]); // 문자열로 들어왔는지 아닌지 확인
+                    //if(x != "receive" && x!= "confirm") { //receive와 confirm이 아닐때
+                    if( !(x == "receive" || x == "confirm") ){ //receive와 confirm이 아닐때
+                        console.log(this[x]);
+                    }
+                }
+            };
+        }
+        let first = new AnimalChart ("홍길동", "강아지", 1);
+    //콘솔창
+        //first.receive("감기", "나쁨");
+        //first.confirm();
+        //first.confirm(); -> 문자열인지 아닌지, 어느타입인지, 확인가능함
+
+    </script>
+</body>
+</html>
