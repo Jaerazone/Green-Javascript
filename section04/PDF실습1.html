@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+    // 2. 표현식 함수(익명함수)
+    // 아래의 선언적 함수를 표현식으로 바꾸세요
+    // 1) function test() { console.log("테스트 함수입니다.") }
+    function test() {
+        console.log("테스트 함수입니다.");
+    }
+    //콘솔창 test()
+    let testValue = function() {
+        console.log("테스트 함수입니다.");
+    };
+    //콘솔창 testValue()
+
+    // 3. 화살표식 함수
+    // 아래의 선언적 함수를 화살표식으로 바꾸세요
+    //1) function add(a,b) { return a+b }
+    let add = (a,b) => a+b; //한줄에쓰면 {}없이 가능, return값으로 a+b배출
+    //콘솔창 add(5,6)
+
+    //2) function messageAlert() { alert("화살표식 함수로 바꿨습니다") }
+    let messageAlert = () => alert("화살표식 함수로 바꿨습니다");
+    //콘솔창 messageAlert()
+
+//     4. 재귀 함수
+// 빈 공간을 채우세요. 
+//1) 숫자 1+N 까지의 숫자의 합을 구하는 재귀함수입니다
+    function PlusPlus( n) { 
+        if(n == 0) { 
+            return 0;
+        }
+        else { 
+            return n += PlusPlus(n-1); 
+        }
+    }
+    //콘솔창 PlusPlus(3)
+    //재귀함수는 자기자신을 호출한다~
+
+    //6. 객체
+    //1) 아래 객체에 메소드를 추가하세요
+    let myDog = {
+        name: "Happy",
+        friends: ["Mini", "Choco"]    
+    };
+    myDog.bark = function() {// 메소드 추가
+        return "bow-wow";
+    };
+    //콘솔창 myDog.bark()
+
+    //7. 리터럴 값으로 객체 생성
+    //다음 표를 자바스크립트 객체로 나타내시오
+    //(키 이름과 자료형은 적절하다고 생각하는 것으로 사용합니다.)
+    let book = {
+        // 속성
+        name :  "nature of code",
+        bookPrices : 30000,
+        author : "다니엘 쉬프만",
+        ISBN : 9788968481901,
+        page : 620
+    }
+    console.log(book);
+    
+    //8. 생성자 함수 
+    //다음 표의 객체를 생성할 수 있는 생성자 함수를 만드시오(생성자 함수 이름은 Product, 키 
+    //이름과 자료형은 적절하다고 생각하는 것으로 사용합니다).
+    function Product(name, weight, price1){
+            this.name=name;
+            this.weight=weight;
+            this.price1=price1;
+            //메소드 : Product.calculate(200) 입력하면
+            // 100g*2 = 200g이므로, 3380원을출력
+            this.calculate = function(weight) {
+                return this.price1*(weight/this.weight);
+            }
+        }
+        let myProduct = new Product('삼겹살', 100, 1690);
+        myProduct.calculate(200);
+
+  //  함수 3문제
+//1. 아래 함수를 선언식 함수로 작성하고 console에서 호출하세요
+//º 함수 이름: power
+ //- 매개 변수를 하나 넣으면 제곱해 준다(예 : power(2) = 4).
+ //- 매개 변수를 2개 넣으면 <첫 번째 매개 변수>의 <두 번째 매개 변수> 제곱만큼 해 준다
+ //(예 : power(2, 3) = 8)
+ function power (a,b) {
+            if(b==undefined) {
+            let sum = a*a
+            return sum;
+            }
+            if (a,b) {
+                let sum= 0;
+                for(i=1;i<=b;i++){
+                    sum = sum + a;
+                }
+                return sum;
+            }
+        }
+        console.log(power(2));
+        console.log(power(2,3));
+//2. 아래 함수를 표현식 함수로 작성하고 console에서 호출하세요
+//º 함수 이름: multiply
+//º 매개 변수로 넣은 값을 모두 곱해준다(예 : multiply(1, 2, 3, 4, 5) = 120).
+        let multiply = function(...num) {
+            let mult =1;
+            for (let n of num) {//num안의 값을 가져올수있다
+                mult *= n;
+            }
+            return mult;
+        };
+        //콘솔창 multiply(5,6,10,100,2,3)
+
+//3. 아래 함수를 선언식 함수로 작성하고 console에서 호출하세요. 함수 출력결과
+
+        function meetAt(a,b,c) {
+                    if(arguments.length == 1) {
+                        return a + "년 ";
+                    }
+                    else if (arguments.length == 2) {
+                        return a + "년 " + b + "월"
+                    }
+                    else if (arguments.length == 3 ) {
+                        return a + "/" + b + "/" + c 
+                    }
+                }
+/* 위와 동일, 윗 코드는 arguments.length로 배열안 요소를빼낸다
+        function meetAt(year,month,day) {
+            if (month==undefined & day==undefined) {
+                return `${year} 년`;
+            } 
+            else if (day==undefined) {
+                return `${year}년 ${month}월`;
+            }
+            else if (true) {
+                return `${year}/${month}/${day}`;
+            }
+        }
+        */
+        //콘솔창
+        // meetAt(2022)
+        // meetAt(2022,3)
+        // meetAt(2022,3,5)
+//1.아래 객체에서 maps이라는 속성값을 가져오기 위해서 
+//어떻게 접근하면 되는지 작성하세요. 
+        const myStorage = {
+            car: {
+                inside: {
+                    gloveBox: "maps",
+                    passengerSeat: "crumbs"
+                },
+                outside: {
+                trunk: "jack"
+                }
+            }
+        };
+        console.log(myStorage.car.inside.gloveBox);
+//2. 아래 생성자 함수를 만드세요
+        function Produnct (name,pay) {
+            //속성값
+            this.name = name;
+            this.pay = pay;
+            //메소드
+            this.keep = function () { //익명함수
+                return `${this.name}을 보관했습니다`;
+            };
+            this.getPay = function () { //익명함수
+                return this.pay;
+            };
+        
+            let Produnct1 = new myProdunct ("book",6000);
+            let Produnct2 = new myProdunct ("pencil",2000);
+            let Produnct3 = new myProdunct ("hat",8000);
+        }
+    //2+3. 아래 생성자 함수를 만드세요. 
+
+            function User (id, money) {
+                //속성값
+                this.id = id;
+                this.money = money;
+                this.buyList = [];
+                //메소드
+                this.charge = function (plusMoney) {
+                    return this.money += plusMoney;
+                };
+                this.buy = function (Produnct) {
+                    this.money = this.money-this.Produnct.getPay();
+                    this.buyList.push(Product.name);
+                }
+            }
+            let user1 = new User ("harry",10000);
+        //콘솔창
+        //user1
+        //user1.buy(myProduct)
+        
+//1. 일반함수 
+//주어진 자연수 A,B 최소공배수(lcm)를 구하는 함수를 만드세요
+/*
+        function numMax (a,b) { // 최대공약수
+            let lcm = b;
+            while (true) {
+                if(a%lcm == 0 && b%lcm == 0) {
+                    console.log(`${b}와 ${a}의 최대공약수는 ${lcm}입니다`);
+                    break;
+                }
+                lcm--;
+            }
+        }
+        
+        function lcm (a,b) { // 최소공배수
+            let n = 1; // 1~n까지 증가시키면서 b와 곱함
+            while(n*b % a !==0) {
+                //1~a값과 b값을 곱해 a로 나누었을때 나머지가 0이아니라면 반복
+                n++; //1씩증가
+                }
+                return n*b;
+            }
+*/
+            function lcmRenew (i,j) { // 최소공배수
+            let n=1; // 1~n까지 증가시키면서 b와 곱함
+            let lcmNum = 0; // 최소 공배수일수도 있는수 
+            while (true) {
+                let lcmNum =n*j;
+                if(lcmNum%i == 0) {
+                    //나머지가 0이라면 반복문을 나옴
+                    break;
+                }
+                n++;
+            }
+            return n*j;
+        }
+        //콘솔창
+        //lcm(2,4)
+        //lcm(3,5)
+        //lcm(16,12)
+        //lcmRenew(5,10)
+        
+//2. 객체와 함수
+//Object-접근하기
+//문제
+//getAnswer 함수를 구현해 주세요.
+        let myProfile = {
+            name: '김개발',
+            address: {email: 'geabal@gmail.com',home: '위워크'},
+            'my Favorite': {food: 
+                                [{name: '샐러드', price: 3500}, 
+                                {name: '삼겹살', price: 15000}],
+                            hobby: ['축구']
+                            },
+                            
+                        };
+        function getAnswer () {
+            console.log(myProfile['my Favorite'].food[0].name);
+        }
+    getAnswer();
+    //또는 콘솔창으로 getAnswer(myProfile)
+    
+//3. for문과 배열과 생성자 함수와 객체
+        function Profile(name,phoneNumber) {
+            this.name = name;
+            this.phoneNumber = phoneNumber;
+            function calling() { 
+                return `name에게 전화하고 있습니다`;
+            }
+        }
+
+        let profileBook = [];
+        profileBook.push([{ name : "Harry", phoneNumber : "0543236543" },
+        { name : "Sherlock", phoneNumber : "0994372684" },
+        { name : "John", phoneNumber : "0120331254" },]);
+
+        console.log(profileBook[0][0]);
+
+    </script>
+</body>
+</html>

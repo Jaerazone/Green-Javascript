@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        //내장객체 응용
+        //문자열길이
+        //person[string.length] = 문자열길이
+        //person[string.charAt(n)] = 문자열의 n번째 위치에있는 문자를 반환
+        //person[string.slice(n,m)] = 문자열의 n번째부터 m-1위치의 문자까지 반환]
+        //let sample = ""; // 빈값으로 글자생성
+        
+        //function printCenter(sample) {
+        //    console.log(String(sample));
+        //}
+//콘솔창
+//printCenter("hi")
+       
+        function printCenter(sample) {
+            let a='';
+            const length = sample.length;
+            const half = Math.floor(length/2);
+
+            if (length%2==0){
+                if(length==2) {
+                    a = sample;
+                }
+                else {
+                    a = sample[half-1]+sample[half];
+                }
+            }
+            else {
+                a = sample[half];
+            }
+            return a;
+        }
+      
+
+        
+
+
+        
+
+    </script>
+</body>
+</html>

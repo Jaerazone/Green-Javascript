@@ -1,0 +1,14 @@
+* 깃허브에 push하는거 처음이시면 아래 순서대로 하시면되구요
+1. git init  -->초기화
+2. git add .  -->인덱스 추가
+3. git  commit -m "message"  -->커밋 & 기록할내용
+4. git remote add origin 주소 -->원격 저장소 영역지정해서 인덱스 )
+5. git push -u origin main  --> 원격저장소로 push
+
+
+* 한번 init한 이후
+1.   Git add . 
+2.   git  commit -m "message"
+3.   git push -u origin main
+
+이 세가지만 깃배쉬에 입력하면 깃헙레파지토리에 바로 올라가요!!( 수정사항이 있는 파일만)
