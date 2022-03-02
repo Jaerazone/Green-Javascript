@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제목입니다</title>
+</head>
+<body>
+    <!-- 7) DOM 요소실습1, DOM요소의 내용변경 .innerHTML
+
+    -querySelector를 이용해서 클래스가 Class-name 태그를 가져온 후 
+     내용을 "클래스를 통해 수정된 내용입니다"내용으로 변경
+    -querySelector를를 이용하여 id가 title 태그를 가져온 후 내용을
+     "아이디를 들고와서 수정된 내용입니다" 내용으로 변경
+    -querySelector를 이용하여 <li>태그를 가져온 후 내용을
+     "요소들을 한번에 수정한 내용입니다" 내용으로 변경
+    -->
+    
+    
+    <h1 id ="title">제목입니다</h1>
+    <div class="class">
+        <ul>
+            <li>첫번째 요소입니다</li>
+            <li>두번째 요소입니다</li>
+            <li>세번째 요소입니다</li>
+            <li>네번째 요소입니다</li>
+        </ul>
+    </div>
+
+    <form id = "form">
+        <input type="text">
+        <input type="submit" value="제출">
+    </form>
+
+
+
+
+    <a href="">링크입니다</a>
+    <p class="class-name">단락입니다</p>
+
+    <script>
+        document.write("Document 메소드 - 요소 선택");
+        /* 1)
+        -document.getElementsByTagName/ClassName
+         선택자 : CSS 선택자로 선택할수있다
+        -body.Class-name #id-name [속성이름=속성값]
+         띄어쓰기 : 자손, 
+         붙여쓰기 : 붙여적힌 값들을 다 가지고 있는요소
+        -document.querySelectorAll(선택자)
+         : 해당 선택자로 선택되는 요소를 모두 선택함
+        -document.querySelector(선택자)
+        -document.forms 과 같은 
+         HTML 객체 집합(Object collection)을 이용한 선택
+         : 도큐먼트 안에 있는 객체 집합
+        
+        ex)2. 네이버 왼쪽이미지 콘솔창에 
+        document.querySelector(".special_logo_link")
+        입력해보면 그에 해당하는 하이퍼링크 띄워준다
+        */
+
+        /*3) HTML Collection이란? 
+        -요소의 문서 내 순서대로 정렬된 배열과 유사한 객체
+        -리스트에서 선택할 때 필요한 메서드와 속성을 제공
+         : [인데스], itim(인덱스)를 통해 값을 들고 올수 있다
+        */
+        document.write("Document 메소드 - 요소 선택 실습1");
+    /*  
+            4)코로나 19홈페이지에서 뉴스&이슈의 클래스 네임을 확인한것처럼
+            보도자료의 클래스 네임을 확인하고
+            console창에서 제대로 들고 올수있는지 확인하세요
+            http://ncov.mohw.go.kr/
+            ((콘솔창))
+            document.getElementsByClassName("m_fact")
+            document.getElementsByClassName("m_fact")[0]
+    */
+        document.write("Document 메소드 - 요소 선택 실습2");
+    /*
+            5)쿼리설렉트로 보도자료 들고오고
+            쿼리설렉트올로 보도자료 리스트 들고와보기
+            ((콘솔창))
+            document.querySelector(".m_fact")
+            document.querySelectorAll(".m_fact")
+            document.querySelectorAll(".m_fact")[0]
+            클래스라서 . 으로 시작해야함
+
+            document.querySelectorAll(".m_text_list li")
+            document.querySelectorAll(".m_text_list li")[0]
+            [0] 0번 인덱스값을 들고와줄수도 있다.
+
+            document.querySelector(".victory_korea .txt")
+            클래스 안에 스판 태그까지 들어갈수있다
+    */
+    /*
+    6)document.createElement() 메서드는 지정한 타겟의 HTML 요소를 만들어 변환해줌
+
+    document.write("Document 요소 문서객체 모델 - 요소(태그)");
+    document.getElementsByTagName("li")
+
+
+
+    //콘솔창
+    let aElement = document.querySelector("a"); // a라는 링크 할당
+    aElement
+    aElement.innerHTML = "innerHTML로 수정한 내용입니다" // DOM요소의 내용변경, html적혀있는 내용변경
+    aElement.href = "https://www.naver.com"; // DOM요소의 속성변경, 할당되어있는 링크를 네이버로 바꿈
+    aElement.style.textDecoration = "none" //요소.스타일변경.텍스트데코레이션 none 밑줄없앰
+    // css에서는 text-decoration으로 연결을 '-' 하이퍼로했었는데
+    // 자바스크립트 창에서는 대문자로 이어준다는걸 참고하십쇼~
+    aElement.style.color = "red";
+
+    let pElement = document.querySelector("p") // p단락을 불러와
+    pElement.className= "new-class" // p단락의 이름을 변경
+    */
+/*
+    let divElement = document.querySelector("div")
+    //이렇게 변수에 담아서 들고와도 된다 
+    divElement.className = "클래스를 통해 수정된 내용입니다"
+    let titleElement = document.querySelector("h1")
+    titleElement.className = "아이디를 들고와서 수정된 내용입니다"
+    let liElement = document.querySelectorAll(".div ul li")
+    liElement.className = "요소들을 한번에 수정한 내용입니다"
+
+
+    7)
+    let classElement = document.querySelector(".class-name")
+    classElement
+    classElement.innerHTML = "클래스를 통해 수정된 내용입니다"
+    document.querySelector(".class-name").innerHTML="변수에 넣지않고 바로 접근하여 값 수정"
+    document.querySelector("#title").innerHTML = "id를 통해서 수정한 내용입니다"
+    */
+
+    //콘솔창
+    // let liList = document.querySelectorAll("li")
+    // liList
+    // for (let i = 0; i <liList.length; i++) {
+    //     liList[i].innerHTML = "값을 한번에 수정"
+    // }
+    let liList = document.querySelectorAll("li");
+    //NodeList : 접근방법은 배열과 동일
+    for (let i = 0; i <liList.length; i++) {
+        liList[i].innerHTML = `값을 한번에 수정 ${[i]}`;
+    }
+    
+    //8)
+    // 드래그 flase로 되어있을땐 드래그 되는데
+    // true면 드래그 안됨
+    // 콘솔창
+    // p.draggable= true // p단락만 드래그 안되게 바꿔봄.!!
+
+    //9) DOM 요소실습 2, DOM 요소의 속성변경
+    //쿼리셀렉사용, a태그를 가져와 하이퍼링크 다음으로 바꿈
+    //콘솔창
+    //let aElement = document.querySelector("a");
+    //aElement
+    //aElement.href = "https://www.daum.net/"
+    // 혹은 한줄로  document.querySelector("a").href="https://www.daum.net/";
+
+    //쿼리셀렉사용, id가 form인 form태그에서 input태그를 가져온뒤
+    //속성을 disabled = true로 변경
+    //콘솔창
+    //document.querySelector("#form input").disabled = true
+    //document.querySelector("#form input").placeholder="추가해준 힌트입니다" //이런것도있음
+    //혹시라도 요소안에 내용에 대해 알고싶으면
+    //console.dir(document.querySelector("#form input"))
+    //console.dir(여기에 넣으면된다~)
+
+    //10)  DOM 요소실습 3, DOM 요소의 스타일 변경
+    // 콘솔창
+    // 쿼리설렉으로 class-name 배경색 노랑으로 바꿈
+    //document.querySelector(".class-name").style.backgroundColor = "yellow";
+    // 쿼리설렉으로 title에 줄긋기
+    //document.querySelector("#title").style.textDecoration = "line-through";
+    //쿼리설렉으로 li리스트들 색상을 블루로 바꿈
+    //let liListStyle = document.querySelectorAll("li")
+    //for (let i=0; i<liListStyle.length; i++) {
+    //    liListStyle[i].style.color = "blue";
+    // }
+     //console.dir(liList[1])
+     //document.createElement("br") //요소 생성할수 있다
+
+/*
+        //11) HTMLCollection과 NodeList의 차이
+        : 공통점 :DOM Node
+        liList[0].childNodes // 자식노드
+        liList[0].parentNode //부모노드
+        liList[0].parentElement //부모엘리먼트
+        엘리먼트는 태그, 노드는 세분화한 내용이다
+        //let ul = document.querySelector("ul")
+        //ul.childNodes
+        0:text //이건 텍스트 노드가 들어가있음
+        1:li // 이건 엘리먼트가 들어가있음..?
+        ul.firstChild
+        ul.lastChild
+        liList[0].childNodes[0].nodeValue = "nodeValue를 통해 바꿨습니다"
+        //클래스명이나 id같은 이름이 없기 때문에 자식노드 혹은 형제노드로 설정해본다
+        let li2 = document.querySelector("li").nextElementSibling
+        //두번째 li로 넘어감, li2로 설정해줌
+        li2.childNodes[0].nodeValue ="형제노드로 접근하여 수정"
+        // 형제노드로 접근해서 노드값수정
+        //li2.nodeValue으로 적으면 값이 null임, [0]인덱스값으로 찾아야함
+        li2.firstChild.nodeValue = "firstchild를 이용해서 접근가능"
+        //li2의 첫번째 자식으로 접근해 수정해봄
+*/
+        // 12) 노드로의 접근 실습 1
+        // 노드간의 관계를 이용하여 접근하는방법
+        // 1. h1태그 찾은후 child node 이용해 node value값을 출력
+        //콘솔)document.querySelector("h1").childNodes[0].nodeValue
+        //'제목입니다'
+        // 2. li태그 찾은후 parent node 이용해 ul을 찾은후 
+        //     next element sibling을이용해 다음형제요소가 무엇인지 확인
+        //콘솔)document.querySelector("li").parentNode.nextElementSibling
+        //null
+        // 3. ul태그를 찾은 후 first child의 next sibling이 무엇인지 확인
+        //콘솔)document.querySelector("ul").firstChild.nextSibling
+        //<li>...</li>
+        // 13) 노드로의 접근 실습 2
+        // 1. ul태그의 nodeName을 확인하세요
+        //콘솔) document.querySelector("ul").nodeName
+        // 2. h1태그의 first child를 이용해 node Value값을 수정하세요
+        //콘솔) document.querySelector("h1").firstChild.nodeValue 
+        //= "nodeValue 값을 통해 내용을 바꾸었습니다"
+        // 혹은 document.querySelector("h1").innerHTML="값 다른거로 변경"
+
+        // 13) 노드의 관리 - 생성, 추가, 제거, 복제
+        // createElement() -요소 생성(태그)
+        // createAttribute()속성생성 -  setAttributeNode()으로 추가 가능
+        // createTextNode() 텍스트 생성
+        // let pElement = document.createElement("p") // p단락 생성
+        // pElement
+        // pElement.innerHTML="값을 추가합니다" 
+        // let atrr = document.createAttribute("style")
+        // atrr
+        // atrr.value="color : red"; // 스타일 안에 컬러를 넣어줌
+        // pElement.setAttributeNode(atrr)
+        // pElement
+        // //아까만들어준 pElement
+        // document.querySelector(".class").appendChild(pElement)
+        // document.querySelector("h1").setAttributeNode(atrr)
+        // //이거치면 이미 다른요소의 속성노드라서 사용할수 없고, 복제해서 사용해야한다고뜸
+        // //그래서 위에코드 말고 클론으로 복제해서 사용해야함 아래것 사용하기
+        // document.querySelector("h1").setAttributeNode(atrr.cloneNode(true))
+
+        // //4번째 il 지워보기
+        // liList[3].remove() //자기 자신을 지우는거라 리무브
+        // ul.removeChild(ul.childNodes[5]) 
+        // // text도 노드라서 0 text,1 il,2 text,3 il,4 text,5 il <-5번째 노드를 지움
+        // pElement.removeAttribute("style")
+        // //스타일 삭제함
+
+    </script>
+    
+    
+</body>
+</html>

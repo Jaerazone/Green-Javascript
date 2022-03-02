@@ -163,47 +163,45 @@
         };
         console.log(myStorage.car.inside.gloveBox);
 //2. 아래 생성자 함수를 만드세요
-        function Produnct (name,pay) {
+        function MyProduct(name, pay) {
             //속성값
-            this.name = name;
-            this.pay = pay;
-            //메소드
-            this.keep = function () { //익명함수
+            this.name=name;
+            this.pay=pay;
+            //메소드, 익명함수로 만들어줌
+            this.keep = function() {
                 return `${this.name}을 보관했습니다`;
             };
-            this.getPay = function () { //익명함수
+            this.getPay = function() { ////메소드, 익명함수로 만들어줌
                 return this.pay;
             };
-        
-            let Produnct1 = new myProdunct ("book",6000);
-            let Produnct2 = new myProdunct ("pencil",2000);
-            let Produnct3 = new myProdunct ("hat",8000);
         }
+        let myProduct1 = new MyProduct("book",6000);
+        let myProduct2 = new MyProduct("pencil", 2000);
+        let myProduct3 = new MyProduct("hat", 8000);
     //2+3. 아래 생성자 함수를 만드세요. 
-
-            function User (id, money) {
-                //속성값
-                this.id = id;
-                this.money = money;
-                this.buyList = [];
-                //메소드
-                this.charge = function (plusMoney) {
-                    return this.money += plusMoney;
-                };
-                this.buy = function (Produnct) {
-                    this.money = this.money-this.Produnct.getPay();
-                    this.buyList.push(Product.name);
-                }
-            }
-            let user1 = new User ("harry",10000);
+        function User(id, money) {
+            this.id=id;
+            this.money=money;
+            this.buyList = [];
+            this.charge= function(plusMoney) {
+                return this.money += plusMoney;
+            };
+            this.buy= function(product) {
+                this.money -= product.getPay();
+                this.buyList.push(product.name);
+            };
+        }
+        let user1= new User("Harry",10000);
         //콘솔창
         //user1
         //user1.buy(myProduct)
+
+
         
 //1. 일반함수 
 //주어진 자연수 A,B 최소공배수(lcm)를 구하는 함수를 만드세요
-/*
-        function numMax (a,b) { // 최대공약수
+
+function numMax (a,b) { // 최대공약수
             let lcm = b;
             while (true) {
                 if(a%lcm == 0 && b%lcm == 0) {
@@ -213,8 +211,8 @@
                 lcm--;
             }
         }
-        
-        function lcm (a,b) { // 최소공배수
+    /////////////////////// 최소공배수
+      function lcm (a,b) { 
             let n = 1; // 1~n까지 증가시키면서 b와 곱함
             while(n*b % a !==0) {
                 //1~a값과 b값을 곱해 a로 나누었을때 나머지가 0이아니라면 반복
@@ -222,26 +220,26 @@
                 }
                 return n*b;
             }
-*/
-            function lcmRenew (i,j) { // 최소공배수
+            function lcmRenew(a,b) { // 최소공배수
             let n=1; // 1~n까지 증가시키면서 b와 곱함
             let lcmNum = 0; // 최소 공배수일수도 있는수 
             while (true) {
-                let lcmNum =n*j;
-                if(lcmNum%i == 0) {
+                lcmNum = n*b;
+                if ( lcmNum % a == 0) {
                     //나머지가 0이라면 반복문을 나옴
                     break;
                 }
-                n++;
+                n++ //1씩 증가
             }
-            return n*j;
+            return lcmNum;
         }
         //콘솔창
+        //numMax(5,10)
         //lcm(2,4)
-        //lcm(3,5)
         //lcm(16,12)
         //lcmRenew(5,10)
-        
+        //lcmRenew(10,45)
+
 //2. 객체와 함수
 //Object-접근하기
 //문제
@@ -266,18 +264,26 @@
         function Profile(name,phoneNumber) {
             this.name = name;
             this.phoneNumber = phoneNumber;
-            function calling() { 
-                return `name에게 전화하고 있습니다`;
+            //메소드는 익명함수를 통해 만든다
+            this.calling = function() { 
+                return `${name}에게 전화하고 있습니다`;
             }
         }
 
         let profileBook = [];
-        profileBook.push([{ name : "Harry", phoneNumber : "0543236543" },
-        { name : "Sherlock", phoneNumber : "0994372684" },
-        { name : "John", phoneNumber : "0120331254" },]);
+        
+        profileBook.push (new profile("Harry",0543236543));
+        //profileBook[0] = new profileBook("Harry",0543236543) 동일
+        //let myProfile = new profileBook("Harry",0543236543) 과 같은형식
+        profileBook.push (new profile("Sherlock",0994372684));
+        profileBook.push (new profile("John",0120331254));
 
         console.log(profileBook[0][0]);
-
+        //콘솔창
+        //profilebook;
+        //profileBook[0]
+        //profileBook[0].name
+        //profileBook[0].calling
     </script>
 </body>
 </html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        //타이머확인
+        let time=0;
+        let funcid = setInterval (
+            function () {
+                time ++;
+                document.write(`${time}초<br>`); //함수가 무슨일을 하는지 적어보기로함
+            },
+            1000
+        );
+        console.log("실행이 되었습니다");
+        document.write("실행이 되었습니다. ");
+        //10초 뒤에 멈춤
+        setTimeout (() => clearInterval(funcid), 10000);
+
+        document.write("clearInterval뒤에 작성한 내용입니다");
+        // let funcid = setInterval ( 
+        //이 함수는 이창을 실행하자마자 백그라운드에서 실행하기위해 준비중이고
+        // 먼저 "실행이되었습니다", document.write , 콘솔창 보여준뒤
+        //바로 함수가 뒤에 실행됨
+        
+    </script>
+</body>
+</html>

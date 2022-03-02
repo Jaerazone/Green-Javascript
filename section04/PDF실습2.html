@@ -41,13 +41,59 @@
             }
             return a;
         }
-      
+        //콘솔창
+        //printCenter("hi")
+        //printCenter("easy")
+        //printCenter("hello")
 
-        
-
-
-        
-
+// 2. Array.length Math.random(0~1이하의 난수)
+// 넌센스 Quiz 만들기.
+        // 1)
+        let quizArray = [
+            { quiz: "왕이 넘어지면", answer:"킹콩" },
+            { quiz: "오리가 얼면", answer:"언덕" },
+            { quiz: "한국의 수도는", answer:"서울" },
+            { quiz: "5+9", answer:"14" }
+        ];
+        //2)
+        function randomQuiz (quizArray, count) {
+            //문제를 출력 :quizArray[0].quiz 반복 (for)
+            //count만큼 반복(for)
+            //랜덤하게 출력 : 인덱스값이 랜덤하게 들어감 quizArray[randomNum].quiz
+            //5)
+            let score = 0;
+            let randomNum =0;
+            //7) for문 선언
+            for (let i=0; i<count; i++) {
+                 //3)
+                randomNum = Math.floor(Math.random()*quizArray.length);
+                //랜덤은 0~1사이 난수가 들어가있어서, 정수를 사용하기위해 기수를 곱해줘야함
+                //문제가 4개니깐 4를 곱해줘도되고, 퀴즈수가 늘어나면 퀴즈길이를 곱하면된다.
+                //소수점까지 나오기때문에 정수로 표현해준다 Math.floor
+                //return quizArray[randomNum].quiz;
+                //여기까지만 적고, return randomNum;을 작성해주면
+                // 콘솔창
+                //randomQuiz(quizArray,1); 을 넣으면 랜덤으로 여러숫자가 나옴
+                //4)
+                let answer = prompt (quizArray[randomNum].quiz);
+                //객체에서 만든 answer과 함수안에서만든 answer은 값이 안겹친다
+                //문제출력은 : prompt
+                //6)
+                if (answer == quizArray[randomNum].answer) {
+                    score++;
+                }
+                //점수 0으로 초기화 후 값을 맞췄을때 점수가 오르면+1
+            }
+            //return score;
+            //콘솔창 
+            //randomQuiz(quizArray,1) 출략해서 맞추면
+            //1이 출력됨. score값
+            
+            //8)
+            return `${count}개 중에서 ${score}개 맞췄습니다`;
+        }
+        //최종 콘솔창
+        //randomQuiz(quizArray,3)
     </script>
 </body>
 </html>

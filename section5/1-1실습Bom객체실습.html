@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //Bom 객체 실습 4(코드로적는 실습은 처음임!)
+        //confirm()을 이용하여 확인을 누르면 현재의 운영체제를 알려주세요.
+        let check = confirm("운영체제를 알려드릴까요?");
+        //아래 check값에-> let check = confirm("운영체제를 알려드릴까요?"); 
+        // 이걸 넣어줘도 된다. 어차피 값이 참이면되니깐~
+        if(check) {//불린값이라 check가 참임!
+            document.write("운영체제는 "+navigator.platform+"입니다");
+        }
+        else {
+            document.write("취소했습니다.");
+        }
+
+    </script>
+</body>
+</html>
