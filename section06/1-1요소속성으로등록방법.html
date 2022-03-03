@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--1) -->
+    <p>값을 넣어주세요</p>
+    <form action="">
+        <input id="text_value" type="text" value="" 
+                onfocus="backgroundColorChange1(event)" onblur="backgroundColorChange2()">
+                <!--실습2  onfocus, onblur 함수 추가--> 
+        <input type="button" value="확인" onclick="textInput()">
+    </form>
+    <p id="result"></p>
+
+    <script>
+        function textInput () {
+            const textVlaue = document.querySelector("#text_value");
+            textVlaue.style.color = "blue";
+            document.querySelector("#result").textContent = textVlaue.value;            
+        }
+        // 2) 실습2, 아래 추가
+        function backgroundColorChange1 (event) {
+            const textInput = event.target;
+            //이벤트 객체를 들고와서 이벤트가 실행되는 요소(태그를) 들고올수있다.
+            //const textInput = document.querySelector("#text_value");
+            textInput.style.backgroundColor = "gray";
+        } // e, event
+        function backgroundColorChange2 () {
+            const textInput = document.querySelector("#text_value");
+            textInput.style.backgroundColor = "white";
+        }
+    </script>
+</body>
+</html>

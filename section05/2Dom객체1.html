@@ -248,6 +248,110 @@
         // pElement.removeAttribute("style")
         // //스타일 삭제함
 
+        // 3/3(목) 수업시작★★★★★★★★★★★★★★★★★★★★★★★★★★★
+        //★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+        //★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+        //★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+
+        // 1) 노드의 관리 실습 1
+        // 노드넣고 텍스트넣고 색변환하는방법
+        //콘솔)
+  
+        let p = document.createElement("p")
+        document.querySelector("body").appendChild(p)
+        let pText = document.createTextNode("textNode를 이용한 텍스트입니다")
+        pText
+        p.appendChild(pText)
+        let pAttr = document.createAttribute("style")
+        pAttr.value= "color :blue";
+        p.setAttributeNode(pAttr)
+
+        // 2) 노드의 관리 실습 2
+        p.removeAttribute("style")
+        //금방위에서 넣은 색을 remove Attribute를 이용해서 style을 삭제하고 
+        let ul = document.querySelector("ul")
+        ul.childNodes
+        ul.removeChild(ul.childNodes[1])
+        //remove Child 이용해 ul태그의 첫번째 li를 삭제하세요
+        ul.remove()
+        //remove를 이용해 ul태그를 삭제하세요
+
+        // 3) 노드의 관리 실습 3
+        //복제
+        let h1 = document.querySelector("h1")
+        h1
+        document.body.append(h1.cloneNode(true))
+        document.body.append(h1.cloneNode(true))
+        //h1 태그를 복제하여 body에 추가
+        document.querySelector("#title")
+        let p = document.querySelector("p")
+        p
+        document.body.appendChild(p.cloneNode(false))
+        document.body.appendChild(p.cloneNode(true))
+        //p 태그를 복제하여 body에 추가
+
+        // 4) 노드의 조작 -변경, 교체
+        textContent - 노드의 글자변경
+        setAttribute("속성이름", "속성값" ex) class="name" 혹은 style=color:red) 
+        -노드의 속성에 접근해서 값을 변경
+        innerHTML -글자변경
+        style.(스타일속성)-스타일변경 
+        부모노드.replaceChild(새로운,기존) - 기존의 요소노드를 새로운 요소노드로 교체
+        
+        설명정리)
+        일반style.(스타일변경)은 - 글자만 색변경했다면 백그라운드는 안건드리는데
+        setAttribute(,)는 전체적으로 다 변경하는거임
+
+        let = document.querySelector("p"); // p단락 어찌생겼는지 조회
+        let p = document.querySelector("p") // p태그에 접근해서
+        p.textContent = "textContent로 바꾼 내용입니다" // p단락의 글자 바꿈
+        p.setAttribute("class","name") // p단락 클래스 = name으로 변경됨
+        p // 조회해보면 첫번째 줄과 .위와 다름
+        p.setAttribute("style","color:blue") // p단락 글자 블루로색바꿈
+        p //p로 다시 조회해보기
+        p.style.backgroundColor = "gray" // p단락 배경 그레이로변경
+        p.setAttribute("style","color:yellow") // p단락 set으로 전체처리. 노랑으로 변경함
+        // 이렇게 setAttribute로 변경하게되면 이전의 그레이색상은 제거된다
+        // setAttribute 전체적으로 다 변경하는거라 노랑색 한가지값만 가지게됨
+
+        let li = document.querySelector("li") // li단락 선택후 노드로 바꿔줌 li로치환
+        li.textContent = "교체할 값입니다"  // li텍스트콘텐츠 교체할값으로 변경
+        let ul = document.querySelector("ul") //ul단락선택후 노드로변경, ul로이름치환
+        ul //ul조회
+        ul.replaceChild(li,ul.firstElementChild) //ul의 첫번째 요소자식에게 아까 il값 대체해줌
+
+        let a = document.createElement("a") // a단락 선택 후 노드바꿔주고 a로 치환
+        a // a조회
+        a.textContent="확인"; // a에 텍스트 넣어줌
+        ul.firstElementChild // ul단락 선택해보니 자식이 li하나밖에없어서
+        //첫번째 요소(자식)이 하나밖에없어서, a태그를 두번째자식으로 체크해야할듯
+//★★★
+        ul.firstElementChild.nextElementSibling.replaceChild(a, ul.firstElementChild.nextElementSibling.childNodes[0]) 
+//★★★
+        //ul단락의 첫번째요소자식.그다음형제요소.대체해준다(a를 변경하고싶음, 어디를?ul의첫째자식의그다음형제요소의 자식노드0번을 a로변경해줘)
+        //너무 길기때문에 주소를 치환해본다 아래설명
+        let liSibling = ul.firstElementChild.nextElementSibling
+        //이렇게 위치를 이렇게 변수로만들어서 할당해주면
+        liSibling
+        //조회했을때 두번째에 확인이 들어간거 확인되고
+        liSibling.replaceChild(a,liSibling,childNode[0])
+////★★★ 해둔줄과 동일 코드라고 볼수있다
+        liSibling.childNodes[0]
+        //이거로 확인해보니 제대로 들어간듯.
+
+        //5) 노드의 조작실습 1
+        let h1 = document.querySelector("h1")//h1에 접근후 h1으로 코드 부를꺼다 치환
+        h1 // h1 생긴거 한번 봐주고
+        h1.textContent = "textContent로 바꾼 내용입니다" // 텍스트 바꿔줌
+        //text Content을 이용해서 h1의 내용을 "" 수정하세요
+        h1.setAttribute("class","classname") // class의 속성값을 classname으로 바꿨다
+        h1 // 조회해서 함봐주고
+        //setAttribute()을 이용해서 h1의 class속성을 classname이라는 이름으로 추가하세요
+        h1.style.color="blue" // setAttribute는 전체바꿈이니까, style로 글자색만 바꿔준다
+        //style.color을 이용해서 h1의 color을 blue로 수정하세요
+
+
+
     </script>
     
     

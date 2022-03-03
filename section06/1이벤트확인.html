@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 2)그래서 onload라는 함수를 생성해본다
+        //onload는 body가 다 끝난 다음에 스크립트의 이 함수가 실행되어 오류가없어짐
+        //아니면 onload 대신 바디 아래에 스크립트 작성해주면
+        window.onload = function () {
+
+        // 1) 스크립트에 p단락을 호출하게되면 
+        //     페이지자체적으로 위에서 아래로 읽는 시스템이기 때문에 
+        //      p단락 수정을 해버리고, 그뒤에 p단락이 html에 생성되어서
+        //     오류가 발생된다는걸 보여주기 위함
+            const p = document.querySelector("p");
+            p.textContent = "수정했습니다";
+        }
+    </script>
+</head>
+<body>
+    <p onclick="alert(`문자열을 클릭했어요`)">단락입니다</p>
+    <p id="color" onmouseover="color(event)" onmouseleave="color2()">마우스를 올리면 색이 바뀝니다</p>
+    <!-- 2) 마우스오버하면 안에 함수가 실행됨 -->
+
+    <!--3-->
+    <h1>제목입니다</h1>
+    <input type="text" id="title" 
+    onfocus="focusIn()" onblur="focusOut()" onchange="backgroundColorChange()">
+
+    <!--5, 이벤트실습1) p단락 클릭시 다른글자생성 및 색변경-->
+    <p id="hidden_text" addEventListener="click()">눌러주세요</p>
+    <!--6, 이벤트실습2) ol태그 안에 li만들고, input으로 체크박스를 넣고 체크가 true면 -->
+    <ol>
+        <li id="first_list">
+            <input type="checkbox" name="" id="checkbox" 
+            addEventListener="click()">
+            첫번째 리스트입니다.</li>
+    </ol>
+
+    <script>
+        //6실습 - 이벤트실습2
+        // 체크가 true이면 글자의 색이 회색으로 바뀌고
+        // 체크가 false이면 글자의 색을 검정으로 바꾸세요
+        const checkbox = document.querySelector("#checkbox");
+        checkbox.addEventListener("click",check);
+
+        function check(e) { //이벤트 객체를 들고오기로함
+            const checkEvent = e.target; //이 이벤트 객체의 타켓이 누군지 정해줌
+            const li = document.querySelector("#first_list")
+            if(checkEvent.checked == true) {
+                //li객체의 스타일 lightgray
+                li.style.color = "lightgray";
+            }
+            else {
+                li.style.color = "black";
+            }
+        }
+        //4) h1에 컬러함수를 통해 넣어보자
+        //이벤트리스너를 사용할때 DOM객체를 먼저 불러와서 사용
+        const h1 = document.querySelector("h1");
+        h1.addEventListener("click",color);
+        h1.addEventListener("dbclick",color2);
+        //h1 객체에 addEventListener를 통해서 click했을때 컬러함수를실행, p태그가 바뀜
+        //클릭하면 빨간색으로 변하게 만들예정
+        // 2)
+        function color(event) {
+            console.log(event.target)
+            const p = document.querySelector("#color");
+            p.style.color = "red";
+        }
+        function color2() {
+            const p = document.querySelector("#color");
+            p.style.color = "black";
+        }
+        //3) 
+        function focusIn() {
+            const input = document.querySelector("#title"); // 포커스가 맞춰짐
+            input.style.color = "red";
+        }
+        function focusOut() {
+            const input = document.querySelector("#title"); // 포커스가 나감
+            input.style.color= "black";
+        }
+
+        function backgroundColorChange() {
+            const input = document.querySelector("#title");
+            input.style.backgroundColor = "pink" ;
+        }
+        //5실습 - 이벤트실습1
+        //이벤트리스너로 클릭하면, 색상을 변하게하는 함수
+        const hiddenText = document.querySelector("#hidden_text");
+        hiddenText.addEventListener("click",showText);
+
+        function showText(e) { 
+            const text = e.target;
+            if (text.textContent == "숨겨진 단어입니다.") {
+                text.textContent = "눌러주세요1";
+                text.style.color = "black";
+            }
+            else {
+            text.textContent = "숨겨진 단어입니다.";
+            text.style.color = "red";
+            }
+        }  
+        
+    </script>
+</body>
+</html>

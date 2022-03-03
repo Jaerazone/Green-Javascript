@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header id="header">
+        <h1>수정하기 전 제목입니다</h1>
+    </header>
+    <aside id="menu">
+        <ul class="column">
+            <li class="column1">첫번째 내용입니다</li>
+            <li class="column2">두번째 내용입니다</li>
+            <li class="column3">세번째 내용입니다</li>
+            <li class="column4">네번째 내용입니다</li>
+        </ul>
+    </aside>
+    <div class="content">
+        <section class="content-list">
+            <article class="content-body">
+                <ol class="column">
+                    <li class="column1">첫번째 내용입니다</li>
+                    <li class="column2">두번째 내용입니다</li>
+                    <li class="column3">세번째 내용입니다</li>
+                    <li class="column4">네번째 내용입니다</li>
+                </ol>
+            </article>
+        </section>
+        <section class="content-note">
+            <article class="content-body">
+                <p><span class="text-stytle">빈 공간</span>입니다</p>
+            </article>
+        </section>
+    </div>
+
+    <footer>
+        <p>푸터영역입니다</p>
+    </footer>
+
+    <script>
+/*
+let h1 = document.querySelector("#header h1")
+h1.style.color = "blue"
+h1.style.background = "lightgray"
+h1.textContent = "DOM을 이용한 수정"
+
+let ul = document.querySelector("ul")
+ul
+ul.childNodes
+ul.removeChild(ul.childNodes[1])
+(=혹은 ul안의 column1을 지워라도 가능함 )
+
+li를 만든 뒤 내용작성 후 맨뒤에 넣어줌
+let li = document.createElement("li") //노드를 담을 li를 만듦
+li.textContent = "새로 추가한 노드요소입니다"
+ul.appendChild(li) // 맨뒤에넣어줌
+
+
+//자식노드 지우는방법
+let ol = document.querySelector(".content-body .column")
+ol.removeChild(ol.childNodes[3])
+(====== ol.removeChild(ol.firstElementChild)  )
+ol.removeChild(ol.childNodes[6])
+(====== ol.removeChild(ol.lastElementChild)   )
+
+//li를 chageli로 치환해서 내용바꾸고, 
+//replace를 통해서 첫번째자식요소와 변경함
+let chageli = document.createElement("li")
+chageli.textContent = "내용을 바꾸었습니다"
+ol.replaceChild(chageli, ol.firstElementChild);
+
+//★★★★★★
+//위에껀 replace활용법
+//아래는 현재노드에서 내용만 바꾸는방법
+let ol = document.querySelector("ol")
+ol.childNodes[1].textContent="내용을 바꾸었습니다“
+//★★★★★★
+
+document.querySelector(".text-stytle").style.color = "red"
+let p = document.querySelector(".content-body p")
+document.querySelector(".content-body").appendChild(p.cloneNode(true))
+document.querySelector(".content-body").appendChild(p.cloneNode(true))
+*/
+
+    </script>
+</body>
+</html>
+
+
+
