@@ -39,12 +39,31 @@ form input[type="text"]:focus {
     border: none;
 }
 
-form input[type="submit"] {
+form input[type="submit"], form input[type="button"] {
     background-color: lightgray;
     border: none;
     border-radius: 30px;
     padding: 5px 10px;
     /*box-shadow: 1px 1px 3px black;*/
+}
+form input[type="submit"]:hover {
+    background-color: lightblue;
+}
+form input[type="button"]:hover {
+    background-color: lightpink;
+}
+
+ul {
+    list-style-type: none;
+}
+ul li {
+    border-bottom: white 1px solid;
+    margin-top: 10px;
+    margin-right: 40px;
+}
+
+ul li button {
+    float: right;
 }
 .flex {
     margin : 30px 10px;
@@ -59,3 +78,8 @@ form input[type="submit"] {
     padding : 20px;
     word-break: break-word;
 }
+
+
+
+
+

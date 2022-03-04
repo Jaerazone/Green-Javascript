@@ -17,31 +17,33 @@
     <h1 id="greeting"></h1>
 
 
-<!-- 아이디 폼 -->
+    <!-- 아이디 폼 -->
     <form id="login-form">
-    <!--이름입력받을 input을 만들것, submit으로 전달-->
         <input type="text">
         <input type="submit" value="Log in">
     </form>
 
 
-    <!-- 메모 폼 -->
-    <form id="memo-form" class="hidden">
-        <!--hidden만 넣으면 안보이기때문에 자바스크립트에서 수정함!-->
-        <input type="text" placeholder="메모를 입력해주세요." required >
-        <!--required 빈값이면 실행안됨-->
-        <input type="submit" value="작성" >
+    <!-- 메모와 투두 폼 -->
+    <form id="memo-form" class="hidden"> <!--hidden만 넣으면 안보이기때문에 자바스크립트에서 수정함!-->
+    <input type="text" placeholder="메모를 입력해주세요." required > <!--required 빈값이면 실행안됨-->
+    <input type="submit" value="메모" >
+    <input id="todo-button" type="button" value="투두">
     </form>
 
+    <!-- 투두 보드 -->
+    <ul class="todo" id="todo-board"></ul>
+    <!-- 메모 보드 -->
+    <div class="flex" id="memo-board"></div>
 
-    <div class="flex" id="memo-board"> </div>
-
+        
+    <!-- body 아래 스트립트 시작-->
+    <script src="./js/login.js"></script>
+    <script src="./js/memo.js"></script>
+    <script src="./js/background.js"> </script>
+    <script src="./js/clock.js"></script>
+    <script src="./js/todolist.js"></script>
     
-    <!-- body 아래 스크립트 시작 , js파일연결 -->
-    <script src = "./js/login.js"></script>
-    <script src = "./js/memo.js"></script>
-    <script src = "./js/background.js"></script>
-    <script src = "./js/clock.js"></script>
 
 </body>
 </html>
