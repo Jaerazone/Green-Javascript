@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // 1) 프로토타입이란? 속성과 메서드로 상속받아 관리하고있다
+        //아무것도 상속받지 않으면 Object 객체를 prototype으로 갖는다 (Object.prototype)
+        // 자바스크립트는 모든 객체가 프로토타입이라는 객체를 가지고 있고
+        // 그 프로토타입을 통해 상위객체에 접근할수 있다( ex)상속 )
+        function Dog(name, age) {  // 생성자 함수
+            this.name = name;
+            this.age = age;
+            //this.family = "시베리안허스키"; // 새로 추가한 속성
+            
+        }
+
+        Dog.prototype.family = "시베리안허스키" 
+        // 프로토타입으로 따로 만들어주면, 생성자 함수안에 없어도된다.
+        // 콘솔창 : myDog.family
+        Dog.prototype.familyPrint = function(){
+            return this.family;
+        } // 콘솔창 : myDog.familyPrint()
+
+        // Dog이라는 생성자 함수를 prototype으로 갖는다
+        let myDog = new Dog("마루", 1);
+
+        let yourDog = new Dog("초코", 2);
+        console.dir(myDog);
+        console.dir(yourDog);
+        
+        // 1-1) 객체에 속성 및 메소드 추가실습
+        function User(id, pw) {
+            this.id = id;
+            this.pw = pw;
+            //this.wishlist = "가방";
+            
+        }
+        let User1 = new User("홍길동", "1234");
+        //User1.wishlist = "가방"; // User1.wishlist = ["가방"]; : 배열로 넣어도 상관없음
+        
+        let User2 = new User("성춘향", "1234");
+        console.dir(User1);
+        console.dir(User2);
+        
+        // 1-2) 생성자 프로토타입에 속성 및 메소드 추가 실습
+        User.prototype.wishlist = "가방";
+
+        // 2) 프로토타입 classical 방식
+        function Car(m){
+            this.model = m;
+        }
+        //프로토타입으로 메서드 추가
+        Car.prototype.getmodel = function(){ return this.model };
+
+        //자식생성자
+        function ChildCar(){}
+
+        //자식이 부모를 상속
+        ChildCar.prototype = new Car();
+
+        //자식생성자로 객체생성 후 부모 속성과 메서드확인
+        let myCar = new ChildCar();
+        myCar.model = "전기차";
+        console.log(myCar.getmodel()); // 메소드가 제대로 나오는지 콘솔로 확인
+
+        // 2-1) 프로토타입 classical 방식 실습
+        function Animal(name) { 
+            this.name = name;
+            this.getname = function(){ return this.name }; // 부모
+        }
+        //자식은 속성값을 따로 갖는다. 
+        function Cat(name) { 
+            this.name = name; 
+            // 위의 부모getname과 아래 자식getname 중복이면, 자식꺼를 호출함
+            // 동일한 이름이 있다면 자식의 메소드가 우선적 출력
+            // 오버라이딩
+            this.getname = function() { // 자식
+                return `${this.name}입니다`;
+            }
+        }
+
+        Cat.prototype = new Animal();
+
+        let cat = new Cat("나비");
+        console.log(cat.getname());
+        
+    </script>
+</body>
+</html>

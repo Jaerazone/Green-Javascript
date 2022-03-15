@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        let checkstr = "bcAde1";
+        let str = /a/i; //정규표현식   a를 찾겠다, i: 대소문자 다포함
+        
+        let strnum = /\d/; //(같은코드) let strnum = /[0-9]/;
+        // 정규식을 사용하면 복잡한 규칙을 가진 문자열들을 확인하기 쉽다.
+
+        // search는 제일 앞에꺼만 찾아줌
+        // 찾는 값이 없으면 -1을 출력함
+        console.log(checkstr.search(str)); // 인덱스 2번째 a
+        console.log(checkstr.search(strnum)); // 인덱스 5번째 0~9숫자 '1'있음
+
+
+    </script>
+</body>
+</html>
