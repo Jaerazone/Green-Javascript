@@ -12,3 +12,10 @@
 3.   git push -u origin main
 
 이 세가지만 깃배쉬에 입력하면 깃헙레파지토리에 바로 올라가요!!( 수정사항이 있는 파일만)
+
+[강제 푸쉬방법]
+git push origin +master
+$ git push -u origin master
+To https://github.com/Jaerazone/Green-ppt.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/Jaerazone/Green-ppt.git'

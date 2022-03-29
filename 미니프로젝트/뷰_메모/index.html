@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="./css/common1.css">
+</head>
+<body>
+    <div id="app">
+        <h1>시계</h1>
+        
+        <login-component>
+            
+        </login-component>
+
+        <form action="">
+            <input type="text" placeholder="메모를 입력해주세요." required >
+            <button>메모</button>
+            <button>투두</button>
+        </form>
+
+        <ul>투두리스트 추가됩니다</ul>
+        <div id="memo-board">
+            <p>미리만들어진메모입니다</p>
+        </div>
+    </div>
+
+    <script>
+        Vue.component ('login-component',{
+            props : ['name'],
+            template : 
+            `<div>
+                <div v-if="login">
+                <input type="text" v-model="name">
+                <button @click="loginBtn">Log in</button>
+                </div>
+                <h3 v-else>반갑습니다. {{name}}님</h3>
+            </div>`,
+            data : function() {
+                return {}
+            },
+            methods : {
+                loginBtn : function() {
+                    this.login = !this.login
+                }
+            }
+        })
+
+        new Vue({
+            el : "#app",
+            data : {
+                name : "",
+                login : false
+            }
+        })
+    </script>
+    
+</body>
+</html>
